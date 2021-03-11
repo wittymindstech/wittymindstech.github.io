@@ -30,6 +30,13 @@ Our Courses and Services are Below
 
 For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
 
+
+### Onboarding Document
+
+layout: page
+title: "Onboarding"
+permalink: /ONBOARDING.md
+
 ### Jekyll Themes
 
 Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/wittymindstech/wittymindstech.github.io/settings). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
