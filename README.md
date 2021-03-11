@@ -1,6 +1,8 @@
-## Welcome to GitHub Pages
+## Welcome to wiTTyMindsTech
 
-You can use the [editor on GitHub](https://github.com/wittymindstech/wittymindstech.github.io/edit/main/README.md) to maintain and preview the content for your website in Markdown files.
+Follow Us on  [LinkedIn](https://www.linkedin.com/company/20428176) 
+
+Explore  our work  on [GitHub](https://www.github.com/wittymindstech) 
 
 Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
 
