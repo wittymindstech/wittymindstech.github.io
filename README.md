@@ -25,7 +25,7 @@ Our Courses and Services are Below
 
 **Bold** and _Italic_ and `Code` text
 
-[Link](url) and ![Image](src)
+[Donate](https://checkout.razorpay.com/v1/payment-button.js) and ![Image](src)
 ```
 
 For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
