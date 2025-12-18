@@ -8,19 +8,32 @@
     <style>
         body {
             margin: 0;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-family: 'Segoe UI', sans-serif;
             background: #f3f4f6;
         }
 
-        header {
+        /* NAVBAR */
+        .navbar {
             background: #0f172a;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 12px 30px;
             color: white;
-            padding: 20px;
-            text-align: center;
-            font-size: 28px;
-            letter-spacing: 1px;
         }
 
+        .navbar img {
+            height: 50px;
+        }
+
+        .navbar a {
+            color: white;
+            margin-left: 18px;
+            text-decoration: none;
+            font-size: 18px;
+        }
+
+        /* MAIN GRID */
         .container {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
@@ -39,7 +52,7 @@
         }
 
         .card:hover {
-            transform: translateY(-6px);
+            transform: translateY(-5px);
             box-shadow: 0 6px 18px rgba(0,0,0,0.18);
         }
 
@@ -50,69 +63,160 @@
         }
 
         .card h3 {
-            padding: 18px;
             text-align: center;
-            font-size: 20px;
-            color: #111827;
+            padding: 15px;
             margin: 0;
+            color: #111827;
         }
+
+        /* FOOTER */
+        footer {
+            background: #0f172a;
+            color: white;
+            padding: 40px 25px;
+        }
+
+        footer h3 {
+            margin-bottom: 10px;
+            font-size: 20px;
+        }
+
+        footer p {
+            margin: 5px 0;
+            color: #e5e7eb;
+        }
+
+        .footer-columns {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 30px;
+        }
+
+        .footer-links a {
+            display: block;
+            color: #e5e7eb;
+            text-decoration: none;
+            margin: 4px 0;
+        }
+
+        .footer-links a:hover {
+            color: #60a5fa;
+        }
+
+        .social-icons img {
+            width: 28px;
+            margin: 6px;
+        }
+
+        /* COPYRIGHT */
+        .bottom-bar {
+            text-align: center;
+            padding: 15px;
+            background: #0a1325;
+            color: #9ca3af;
+        }
+
     </style>
 </head>
 
 <body>
 
-<header>
-    🚀 WittyMinds Technologies
-</header>
+    <!-- NAVBAR -->
+    <div class="navbar">
+        <img src="logo.png" alt="WittyMinds Logo"> <!-- Place your logo file as logo.png -->
+        <div>
+            <a href="#">Home</a>
+            <a href="#contact">Contact</a>
+            <a href="#policies">Policies</a>
+        </div>
+    </div>
 
-<div class="container">
+    <!-- SERVICES GRID -->
+    <div class="container">
 
-    <a href="app-development.html" class="card">
-        <img src="https://via.placeholder.com/400x200?text=App+Development" alt="">
-        <h3>App Development</h3>
-    </a>
+        <a href="app-development.html" class="card">
+            <img src="https://via.placeholder.com/400x200?text=App+Development">
+            <h3>App Development</h3>
+        </a>
 
-    <a href="web-development.html" class="card">
-        <img src="https://via.placeholder.com/400x200?text=Web+Development" alt="">
-        <h3>Web Development</h3>
-    </a>
+        <a href="web-development.html" class="card">
+            <img src="https://via.placeholder.com/400x200?text=Web+Development">
+            <h3>Web Development</h3>
+        </a>
 
-    <a href="cloud-computing.html" class="card">
-        <img src="https://via.placeholder.com/400x200?text=Cloud+Computing" alt="">
-        <h3>Cloud Computing</h3>
-    </a>
+        <a href="cloud-computing.html" class="card">
+            <img src="https://via.placeholder.com/400x200?text=Cloud+Computing">
+            <h3>Cloud Computing</h3>
+        </a>
 
-    <a href="cybersecurity.html" class="card">
-        <img src="https://via.placeholder.com/400x200?text=Cybersecurity" alt="">
-        <h3>Cybersecurity</h3>
-    </a>
+        <a href="cybersecurity.html" class="card">
+            <img src="https://via.placeholder.com/400x200?text=Cybersecurity">
+            <h3>Cybersecurity</h3>
+        </a>
 
-    <a href="ai-ml.html" class="card">
-        <img src="https://via.placeholder.com/400x200?text=AI+%26+ML" alt="">
-        <h3>AI & ML</h3>
-    </a>
+        <a href="ai-ml.html" class="card">
+            <img src="https://via.placeholder.com/400x200?text=AI+%26+ML">
+            <h3>AI & ML</h3>
+        </a>
 
-    <a href="genai.html" class="card">
-        <img src="https://via.placeholder.com/400x200?text=GenAI" alt="">
-        <h3>GenAI</h3>
-    </a>
+        <a href="genai.html" class="card">
+            <img src="https://via.placeholder.com/400x200?text=GenAI">
+            <h3>GenAI</h3>
+        </a>
 
-    <a href="courses.html" class="card">
-        <img src="https://via.placeholder.com/400x200?text=Our+Courses" alt="">
-        <h3>Our Courses</h3>
-    </a>
+        <a href="courses.html" class="card">
+            <img src="https://via.placeholder.com/400x200?text=Our+Courses">
+            <h3>Our Courses</h3>
+        </a>
 
-    <a href="automation.html" class="card">
-        <img src="https://via.placeholder.com/400x200?text=Automation" alt="">
-        <h3>Automation</h3>
-    </a>
+        <a href="automation.html" class="card">
+            <img src="https://via.placeholder.com/400x200?text=Automation">
+            <h3>Automation</h3>
+        </a>
 
-    <a href="advertisement.html" class="card">
-        <img src="https://via.placeholder.com/400x200?text=Advertisement" alt="">
-        <h3>Advertisement</h3>
-    </a>
+        <a href="advertisement.html" class="card">
+            <img src="https://via.placeholder.com/400x200?text=Advertisement">
+            <h3>Advertisement</h3>
+        </a>
 
-</div>
+    </div>
+
+    <!-- FOOTER -->
+    <footer id="contact">
+        <div class="footer-columns">
+
+            <!-- CONTACT -->
+            <div>
+                <h3>Contact Us</h3>
+                <p>📍 Srinagar, Jammu & Kashmir, India</p>
+                <p>📧 contact@wittymindstech.com</p>
+                <p>📞 +91 9XXXXXXXXX</p>
+            </div>
+
+            <!-- POLICIES -->
+            <div id="policies" class="footer-links">
+                <h3>Policies</h3>
+                <a href="refund-policy.html">Refund Policy (Razorpay)</a>
+                <a href="privacy-policy.html">Privacy Policy</a>
+                <a href="terms.html">Terms & Conditions</a>
+            </div>
+
+            <!-- SOCIAL -->
+            <div>
+                <h3>Follow Us</h3>
+                <div class="social-icons">
+                    <a href="#"><img src="https://cdn-icons-png.flaticon.com/512/1384/1384031.png"></a>
+                    <a href="#"><img src="https://cdn-icons-png.flaticon.com/512/1384/1384015.png"></a>
+                    <a href="#"><img src="https://cdn-icons-png.flaticon.com/512/1384/1384017.png"></a>
+                </div>
+            </div>
+
+        </div>
+    </footer>
+
+    <div class="bottom-bar">
+        © 2025 WittyMinds Technologies | All Rights Reserved
+    </div>
 
 </body>
 </html>
