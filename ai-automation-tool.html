@@ -1,47 +1,151 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>AI Automation Tool</title>
-  <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+  <meta charset="UTF-8">
+  <title>AI Automation Tool | WittyMindsTech</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
   <style>
-    body { font-family: Arial; text-align: center; padding: 40px; }
-    .btn { background: #000; color: #fff; padding: 15px 25px; border: none; cursor: pointer; }
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: #0f172a;
+      color: #fff;
+    }
+
+    header {
+      padding: 60px 20px;
+      text-align: center;
+      background: linear-gradient(135deg, #1e293b, #020617);
+    }
+
+    h1 {
+      font-size: 42px;
+      margin-bottom: 10px;
+    }
+
+    .highlight {
+      color: #22c55e;
+    }
+
+    p {
+      font-size: 18px;
+      color: #cbd5f5;
+    }
+
+    .btn {
+      background: #22c55e;
+      color: #000;
+      padding: 15px 30px;
+      border: none;
+      font-size: 18px;
+      cursor: pointer;
+      margin-top: 20px;
+      border-radius: 8px;
+      text-decoration: none;
+      display: inline-block;
+    }
+
+    .section {
+      padding: 60px 20px;
+      max-width: 1000px;
+      margin: auto;
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+      margin-top: 30px;
+    }
+
+    .card {
+      background: #1e293b;
+      padding: 20px;
+      border-radius: 10px;
+    }
+
+    .price {
+      font-size: 32px;
+      margin-top: 20px;
+      color: #22c55e;
+    }
+
+    footer {
+      text-align: center;
+      padding: 30px;
+      background: #020617;
+      font-size: 14px;
+    }
   </style>
 </head>
+
 <body>
 
-  <h1>🚀 1-Click AI Automation Tool</h1>
-  <p>Automate booking tickets, movies & API workflows instantly</p>
+<header>
+  <h1>🚀 1-Click <span class="highlight">AI Automation Tool</span></h1>
+  <p>Build Real AI Agents to Automate Booking, APIs & Websites</p>
 
-  <h2>💰 Price: ₹999</h2>
+  <div class="price">₹999 Only</div>
 
-  <button class="btn" onclick="payNow()">Get Instant Access</button>
+  <a class="btn" href="YOUR_RAZORPAY_PAYMENT_LINK" target="_blank">
+    💳 Get Instant Access
+  </a>
+</header>
 
-  <script>
-    function payNow() {
-      var options = {
-        "key": "YOUR_RAZORPAY_KEY",
-        "amount": 99900, // ₹999 in paise
-        "currency": "INR",
-        "name": "WittyMindsTech",
-        "description": "AI Automation Tool",
-        "handler": function (response) {
-          // Redirect after payment
-          window.location.href = "/access.html?payment_id=" + response.razorpay_payment_id;
-        },
-        "prefill": {
-          "name": "",
-          "email": ""
-        },
-        "theme": {
-          "color": "#000"
-        }
-      };
+<section class="section">
+  <h2>🎯 What You Will Learn</h2>
 
-      var rzp = new Razorpay(options);
-      rzp.open();
-    }
-  </script>
+  <div class="cards">
+    <div class="card">🤖 Build AI Agents for real-world automation</div>
+    <div class="card">🎟️ Automate movie & ticket booking systems</div>
+    <div class="card">🌐 Automate website workflows & APIs</div>
+    <div class="card">⚡ 1-click execution using smart prompts</div>
+  </div>
+</section>
+
+<section class="section">
+  <h2>💡 Real-Life Applications</h2>
+
+  <div class="cards">
+    <div class="card">🎬 Build your own BookMyShow-type platform</div>
+    <div class="card">🏏 Sports ticket booking automation</div>
+    <div class="card">🎤 Event booking systems</div>
+    <div class="card">📊 Business process automation using AI</div>
+  </div>
+</section>
+
+<section class="section">
+  <h2>🎓 Certification Benefits</h2>
+
+  <div class="cards">
+    <div class="card">📜 Get certified in AI Automation</div>
+    <div class="card">💼 Boost your resume & freelance value</div>
+    <div class="card">🚀 Build real-world deployable projects</div>
+    <div class="card">💰 Start earning using automation skills</div>
+  </div>
+</section>
+
+<section class="section">
+  <h2>📦 What You Get</h2>
+
+  <div class="cards">
+    <div class="card">📥 Downloadable AI Automation Tool (ZIP)</div>
+    <div class="card">📘 Step-by-step setup guide</div>
+    <div class="card">🔗 Optional GitHub access</div>
+    <div class="card">🎥 Demo + Use Case walkthrough</div>
+  </div>
+
+  <div style="text-align:center;">
+    <a class="btn" href="https://rzp.io/rzp/2ztTFggN" target="_blank">
+      🔥 Buy Now & Start Building AI Agents
+    </a>
+  </div>
+</section>
+
+<footer>
+  © 2026 WittyMindsTech | Build. Automate. Scale with AI 🚀
+</footer>
 
 </body>
 </html>
