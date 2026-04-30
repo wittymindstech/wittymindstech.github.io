@@ -10,21 +10,20 @@
 /* GLOBAL */
 body {
     margin: 0;
-    font-family: 'Segoe UI', sans-serif;
-    background: linear-gradient(135deg, #0f172a, #1e293b);
-    color: #fff;
+    font-family: 'Poppins', sans-serif;
+    background: #0f172a;
+    color: white;
 }
 
-/* 🔥 NAVBAR */
+/* NAVBAR */
 .navbar {
     position: sticky;
     top: 0;
-    z-index: 1000;
-    background: rgba(15, 23, 42, 0.95);
-    backdrop-filter: blur(12px);
+    background: rgba(15,23,42,0.95);
+    backdrop-filter: blur(10px);
     display: flex;
     align-items: center;
-    padding: 14px 40px;
+    padding: 15px 40px;
 }
 
 .logo {
@@ -33,58 +32,77 @@ body {
     margin-right: 40px;
 }
 
-/* BIGGER TABS */
 .nav-links {
     display: flex;
-    gap: 14px;
+    gap: 15px;
 }
 
 .nav-links a {
     padding: 12px 22px;
-    font-size: 17px;
-    font-weight: 500;
-    color: #e2e8f0;
-    text-decoration: none;
     border-radius: 30px;
+    text-decoration: none;
+    color: #e2e8f0;
     background: rgba(255,255,255,0.05);
-    transition: all 0.25s ease;
+    transition: 0.3s;
 }
 
-/* SMOOTH HOVER */
 .nav-links a:hover {
+    background: #6366f1;
     transform: scale(1.05);
-    background: #38bdf8;
-    color: #0f172a;
+    color: white;
 }
 
 /* HERO */
 .hero {
-    text-align: center;
-    padding: 80px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 80px 60px;
+    background: linear-gradient(135deg, #6366f1, #9333ea);
+}
+
+.hero-text {
+    max-width: 500px;
 }
 
 .hero h1 {
-    font-size: 42px;
+    font-size: 48px;
 }
 
 .hero p {
-    color: #cbd5f5;
+    margin: 15px 0;
+    color: #e0e7ff;
+}
+
+.btn {
+    padding: 12px 25px;
+    background: white;
+    color: #6366f1;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+/* SECTION */
+.section-title {
+    text-align: center;
+    font-size: 32px;
+    margin: 50px 0 20px;
 }
 
 /* GRID */
 .container {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(250px,1fr));
     gap: 25px;
-    padding: 60px 40px;
+    padding: 40px;
 }
 
 /* CARD */
 .card {
-    background: rgba(255,255,255,0.05);
-    border-radius: 16px;
+    background: #1e293b;
+    border-radius: 15px;
     overflow: hidden;
-    border: 1px solid rgba(255,255,255,0.1);
     transition: 0.3s;
     text-decoration: none;
     color: white;
@@ -92,7 +110,6 @@ body {
 
 .card:hover {
     transform: translateY(-8px);
-    box-shadow: 0 12px 30px rgba(0,0,0,0.4);
 }
 
 .card img {
@@ -102,89 +119,79 @@ body {
 }
 
 .card h3 {
-    text-align: center;
     padding: 15px;
 }
 
-/* SECTION TITLE */
-.section-title {
+/* FEATURES */
+.features {
+    display: flex;
+    justify-content: space-around;
+    padding: 60px;
     text-align: center;
-    font-size: 28px;
-    margin-top: 40px;
 }
 
-/* 🔥 YOUTUBE SHOWCASE */
-.youtube-section {
-    padding: 60px 40px;
+.feature-box {
+    max-width: 250px;
+}
+
+/* YOUTUBE */
+.youtube {
+    padding: 60px;
 }
 
 .youtube-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(250px,1fr));
     gap: 20px;
 }
 
-.video-card {
-    border-radius: 14px;
-    overflow: hidden;
-    transition: 0.3s;
-}
-
-.video-card img {
+.youtube img {
     width: 100%;
-    border-radius: 12px;
+    border-radius: 10px;
 }
 
-.video-card:hover {
-    transform: scale(1.05);
+/* CTA */
+.cta {
+    text-align: center;
+    padding: 60px;
+    background: linear-gradient(135deg, #9333ea, #6366f1);
 }
 
-/* 🔥 FOOTER */
+/* FOOTER */
 footer {
     background: #020617;
-    padding: 60px 40px;
-    border-top: 1px solid rgba(255,255,255,0.08);
+    padding: 60px;
 }
 
 .footer-columns {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    gap: 40px;
+    grid-template-columns: repeat(auto-fit, minmax(200px,1fr));
+    gap: 30px;
 }
 
-footer h3 {
-    margin-bottom: 14px;
-    color: #38bdf8;
-}
-
-footer p, footer a {
+footer a {
     color: #cbd5f5;
     text-decoration: none;
-    font-size: 14px;
 }
 
 footer a:hover {
-    color: #38bdf8;
+    color: #6366f1;
 }
 
-/* WHATSAPP FLOAT */
-.whatsapp-float {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    background: #25D366;
-    color: white;
-    font-size: 22px;
-    padding: 14px 16px;
-    border-radius: 50%;
-}
-
-/* COPYRIGHT */
 .bottom-bar {
     text-align: center;
     padding: 15px;
     background: #020617;
-    color: #64748b;
+}
+
+/* WHATSAPP */
+.whatsapp {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: #25D366;
+    padding: 14px;
+    border-radius: 50%;
 }
 
 </style>
@@ -195,70 +202,72 @@ footer a:hover {
 <!-- NAVBAR -->
 <div class="navbar">
     <div class="logo">WITTYMINDS</div>
-
     <div class="nav-links">
         <a href="/pages/services.html">Services</a>
         <a href="/pages/products.html">Products</a>
         <a href="/pages/digital-marketing.html">Digital Marketing</a>
-        <a href="/pages/genai.html">GenAI Services</a>
+        <a href="/pages/genai.html">GenAI</a>
         <a href="/pages/portfolio.html">Portfolio</a>
-        <a href="/pages/contact.html">Contact Us</a>
+        <a href="/pages/contact.html">Contact</a>
     </div>
 </div>
 
 <!-- HERO -->
 <div class="hero">
-    <h1>Cloud, AI & Digital Solutions</h1>
-    <p>Helping businesses scale globally with modern technology</p>
+    <div class="hero-text">
+        <h1>AI, Cloud & Digital Transformation</h1>
+        <p>We help global businesses scale with modern technology.</p>
+        <a href="#" class="btn">Get Started</a>
+    </div>
 </div>
 
 <!-- SERVICES -->
 <h2 class="section-title">Our Services</h2>
 <div class="container">
-    <a href="#" class="card">
-        <img src="assets/images/app-dev.jpg">
-        <h3>App Development</h3>
-    </a>
 
-    <a href="#" class="card">
-        <img src="assets/images/webdev.jpg">
-        <h3>Web Development</h3>
-    </a>
+    <div class="card"><img src="assets/images/app-dev.jpg"><h3>App Development</h3></div>
+    <div class="card"><img src="assets/images/webdev.jpg"><h3>Web Development</h3></div>
+    <div class="card"><img src="assets/images/cloud.jpg"><h3>Cloud Computing</h3></div>
+    <div class="card"><img src="assets/images/security.jpg"><h3>Cybersecurity</h3></div>
 
-    <a href="#" class="card">
-        <img src="assets/images/cloud.jpg">
-        <h3>Cloud Computing</h3>
-    </a>
+    <div class="card"><img src="https://img.youtube.com/vi/ysz5S6PUM-U/0.jpg"><h3>AI Assistant</h3></div>
+    <div class="card"><img src="https://img.youtube.com/vi/jNQXAC9IVRw/0.jpg"><h3>GenAI</h3></div>
+    <div class="card"><img src="https://img.youtube.com/vi/aqz-KE-bpKQ/0.jpg"><h3>Data Analytics</h3></div>
+    <div class="card"><img src="https://img.youtube.com/vi/ScMzIvxBSi4/0.jpg"><h3>Software Consultation</h3></div>
 
-    <a href="#" class="card">
-        <img src="assets/images/security.jpg">
-        <h3>Cybersecurity</h3>
-    </a>
 </div>
 
-<!-- 🔥 YOUTUBE SHOWCASE -->
-<div class="youtube-section">
-    <h2 class="section-title">Our Product Demos</h2>
-
-    <div class="youtube-grid">
-
-        <a href="https://www.youtube.com/watch?v=ysz5S6PUM-U" target="_blank" class="video-card">
-            <img src="https://img.youtube.com/vi/ysz5S6PUM-U/0.jpg">
-        </a>
-
-        <a href="https://www.youtube.com/watch?v=jNQXAC9IVRw" target="_blank" class="video-card">
-            <img src="https://img.youtube.com/vi/jNQXAC9IVRw/0.jpg">
-        </a>
-
-        <a href="https://www.youtube.com/watch?v=aqz-KE-bpKQ" target="_blank" class="video-card">
-            <img src="https://img.youtube.com/vi/aqz-KE-bpKQ/0.jpg">
-        </a>
-
-        <a href="https://www.youtube.com/watch?v=ScMzIvxBSi4" target="_blank" class="video-card">
-            <img src="https://img.youtube.com/vi/ScMzIvxBSi4/0.jpg">
-        </a>
-
+<!-- FEATURES -->
+<div class="features">
+    <div class="feature-box">
+        <h3>🚀 Fast Delivery</h3>
+        <p>Agile and rapid execution</p>
     </div>
+    <div class="feature-box">
+        <h3>🌍 Global Clients</h3>
+        <p>Serving US & EU markets</p>
+    </div>
+    <div class="feature-box">
+        <h3>🤖 AI Powered</h3>
+        <p>Modern AI-first solutions</p>
+    </div>
+</div>
+
+<!-- YOUTUBE -->
+<div class="youtube">
+    <h2 class="section-title">Product Demos</h2>
+    <div class="youtube-grid">
+        <a href="https://youtube.com/watch?v=ysz5S6PUM-U"><img src="https://img.youtube.com/vi/ysz5S6PUM-U/0.jpg"></a>
+        <a href="https://youtube.com/watch?v=jNQXAC9IVRw"><img src="https://img.youtube.com/vi/jNQXAC9IVRw/0.jpg"></a>
+        <a href="https://youtube.com/watch?v=aqz-KE-bpKQ"><img src="https://img.youtube.com/vi/aqz-KE-bpKQ/0.jpg"></a>
+        <a href="https://youtube.com/watch?v=ScMzIvxBSi4"><img src="https://img.youtube.com/vi/ScMzIvxBSi4/0.jpg"></a>
+    </div>
+</div>
+
+<!-- CTA -->
+<div class="cta">
+    <h2>Ready to scale your business?</h2>
+    <a href="/pages/contact.html" class="btn">Contact Us</a>
 </div>
 
 <!-- FOOTER -->
@@ -266,29 +275,25 @@ footer a:hover {
     <div class="footer-columns">
 
         <div>
-            <h3>About Us</h3>
-            <p>WITTYMINDS TECHNOLOGIES</p>
-            <p>We build AI, Cloud & Digital solutions for global clients.</p>
+            <h3>WITTYMINDS</h3>
+            <p>AI • Cloud • Digital Solutions</p>
         </div>
 
         <div>
             <h3>Quick Links</h3>
             <a href="/pages/services.html">Services</a><br>
             <a href="/pages/products.html">Products</a><br>
-            <a href="/pages/portfolio.html">Portfolio</a><br>
-            <a href="/pages/contact.html">Contact</a>
+            <a href="/pages/portfolio.html">Portfolio</a>
         </div>
 
         <div>
             <h3>Policies</h3>
-            <a href="/pages/refund-policy.html">Refund Policy</a><br>
-            <a href="/pages/privacy-policy.html">Privacy Policy</a><br>
+            <a href="/pages/privacy-policy.html">Privacy</a><br>
             <a href="/pages/terms.html">Terms</a>
         </div>
 
         <div>
             <h3>Contact</h3>
-            <p>📍 Bengaluru, India</p>
             <p>📧 admin@wittymindstech.com</p>
             <p>📞 +91 9113957428</p>
             <p>💬 <a href="https://wa.me/918971599350">WhatsApp</a></p>
@@ -298,11 +303,11 @@ footer a:hover {
 </footer>
 
 <div class="bottom-bar">
-    © 2026 WITTYMINDS TECHNOLOGIES | All Rights Reserved
+© 2026 WITTYMINDS TECHNOLOGIES
 </div>
 
-<!-- WHATSAPP FLOAT -->
-<a href="https://wa.me/918971599350" class="whatsapp-float">💬</a>
+<!-- WHATSAPP -->
+<a href="https://wa.me/918971599350" class="whatsapp">💬</a>
 
 </body>
 </html>
