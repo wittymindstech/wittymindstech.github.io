@@ -19,6 +19,7 @@ body {
 .navbar {
     position: sticky;
     top: 0;
+    z-index: 1000;
     background: rgba(15,23,42,0.95);
     backdrop-filter: blur(10px);
     display: flex;
@@ -34,11 +35,13 @@ body {
 
 .nav-links {
     display: flex;
-    gap: 15px;
+    gap: 14px;
 }
 
 .nav-links a {
     padding: 12px 22px;
+    font-size: 17px;
+    font-weight: 500;
     border-radius: 30px;
     text-decoration: none;
     color: #e2e8f0;
@@ -55,14 +58,11 @@ body {
 /* HERO */
 .hero {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
-    padding: 80px 60px;
+    text-align: center;
+    padding: 100px 20px;
     background: linear-gradient(135deg, #6366f1, #9333ea);
-}
-
-.hero-text {
-    max-width: 500px;
 }
 
 .hero h1 {
@@ -120,18 +120,7 @@ body {
 
 .card h3 {
     padding: 15px;
-}
-
-/* FEATURES */
-.features {
-    display: flex;
-    justify-content: space-around;
-    padding: 60px;
     text-align: center;
-}
-
-.feature-box {
-    max-width: 250px;
 }
 
 /* YOUTUBE */
@@ -148,6 +137,11 @@ body {
 .youtube img {
     width: 100%;
     border-radius: 10px;
+    transition: 0.3s;
+}
+
+.youtube img:hover {
+    transform: scale(1.05);
 }
 
 /* CTA */
@@ -160,16 +154,20 @@ body {
 /* FOOTER */
 footer {
     background: #020617;
-    padding: 60px;
+    padding: 60px 40px;
 }
 
 .footer-columns {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px,1fr));
-    gap: 30px;
+    grid-template-columns: repeat(auto-fit, minmax(220px,1fr));
+    gap: 40px;
 }
 
-footer a {
+footer h3 {
+    color: #6366f1;
+}
+
+footer a, footer p {
     color: #cbd5f5;
     text-decoration: none;
 }
@@ -178,10 +176,12 @@ footer a:hover {
     color: #6366f1;
 }
 
+/* COPYRIGHT */
 .bottom-bar {
     text-align: center;
     padding: 15px;
     background: #020617;
+    color: #64748b;
 }
 
 /* WHATSAPP */
@@ -192,6 +192,8 @@ footer a:hover {
     background: #25D366;
     padding: 14px;
     border-radius: 50%;
+    text-decoration: none;
+    color: white;
 }
 
 </style>
@@ -202,22 +204,23 @@ footer a:hover {
 <!-- NAVBAR -->
 <div class="navbar">
     <div class="logo">WITTYMINDS</div>
+
     <div class="nav-links">
         <a href="/pages/services.html">Services</a>
         <a href="/pages/products.html">Products</a>
         <a href="/pages/digital-marketing.html">Digital Marketing</a>
-        <a href="/pages/genai.html">GenAI</a>
+        <a href="/pages/genai.html">GenAI Services</a>
         <a href="/pages/portfolio.html">Portfolio</a>
-        <a href="/pages/contact.html">Contact</a>
+        <a href="/pages/contact.html">Contact Us</a>
     </div>
 </div>
 
 <!-- HERO -->
 <div class="hero">
-    <div class="hero-text">
-        <h1>AI, Cloud & Digital Transformation</h1>
-        <p>We help global businesses scale with modern technology.</p>
-        <a href="#" class="btn">Get Started</a>
+    <div>
+        <h1>Use AI to Automate Your Services</h1>
+        <p>Scale faster, reduce cost, and grow your customer base globally</p>
+        <a href="/pages/contact.html" class="btn">Get Started</a>
     </div>
 </div>
 
@@ -225,48 +228,63 @@ footer a:hover {
 <h2 class="section-title">Our Services</h2>
 <div class="container">
 
-    <div class="card"><img src="assets/images/app-dev.jpg"><h3>App Development</h3></div>
-    <div class="card"><img src="assets/images/webdev.jpg"><h3>Web Development</h3></div>
-    <div class="card"><img src="assets/images/cloud.jpg"><h3>Cloud Computing</h3></div>
-    <div class="card"><img src="assets/images/security.jpg"><h3>Cybersecurity</h3></div>
+    <a href="/pages/app-development.html" class="card">
+        <img src="assets/images/app-dev.jpg">
+        <h3>App Development</h3>
+    </a>
 
-    <div class="card"><img src="assets/images/ai-assistant.jpg"><h3>AI Assistant</h3></div>
-    <div class="card"><img src="assets/images/genai.jpg"><h3>GenAI</h3></div>
-    <div class="card"><img src="assets/images/data.jpg"><h3>Data Analytics</h3></div>
-    <div class="card"><img src="assets/images/sc.jpg"><h3>Software Consultation</h3></div>
+    <a href="/pages/web-development.html" class="card">
+        <img src="assets/images/webdev.jpg">
+        <h3>Web Development</h3>
+    </a>
 
-</div>
+    <a href="/pages/cloud-computing.html" class="card">
+        <img src="assets/images/cloud.jpg">
+        <h3>Cloud Computing</h3>
+    </a>
 
-<!-- FEATURES -->
-<div class="features">
-    <div class="feature-box">
-        <h3>🚀 Fast Delivery</h3>
-        <p>Agile and rapid execution</p>
-    </div>
-    <div class="feature-box">
-        <h3>🌍 Global Clients</h3>
-        <p>Serving US & EU markets</p>
-    </div>
-    <div class="feature-box">
-        <h3>🤖 AI Powered</h3>
-        <p>Modern AI-first solutions</p>
-    </div>
+    <a href="/pages/cybersecurity.html" class="card">
+        <img src="assets/images/security.jpg">
+        <h3>Cybersecurity</h3>
+    </a>
+
+    <a href="/pages/ai-assistant.html" class="card">
+        <img src="assets/images/ai.jpg">
+        <h3>AI Assistant</h3>
+    </a>
+
+    <a href="/pages/genai.html" class="card">
+        <img src="assets/images/genai.jpg">
+        <h3>GenAI</h3>
+    </a>
+
+    <a href="/pages/data-analytics.html" class="card">
+        <img src="assets/images/data.jpg">
+        <h3>Data Analytics</h3>
+    </a>
+
+    <a href="/pages/software-consultation.html" class="card">
+        <img src="assets/images/consulting.jpg">
+        <h3>Software Consultation</h3>
+    </a>
+
 </div>
 
 <!-- YOUTUBE -->
 <div class="youtube">
     <h2 class="section-title">Product Demos</h2>
+
     <div class="youtube-grid">
-        <a href="https://youtube.com/watch?v=ysz5S6PUM-U"><img src="https://img.youtube.com/vi/ysz5S6PUM-U/0.jpg"></a>
-        <a href="https://youtube.com/watch?v=jNQXAC9IVRw"><img src="https://img.youtube.com/vi/jNQXAC9IVRw/0.jpg"></a>
-        <a href="https://youtube.com/watch?v=aqz-KE-bpKQ"><img src="https://img.youtube.com/vi/aqz-KE-bpKQ/0.jpg"></a>
-        <a href="https://youtube.com/watch?v=ScMzIvxBSi4"><img src="https://img.youtube.com/vi/ScMzIvxBSi4/0.jpg"></a>
+        <a href="https://www.youtube.com/watch?v=ysz5S6PUM-U"><img src="https://img.youtube.com/vi/ysz5S6PUM-U/0.jpg"></a>
+        <a href="https://www.youtube.com/watch?v=jNQXAC9IVRw"><img src="https://img.youtube.com/vi/jNQXAC9IVRw/0.jpg"></a>
+        <a href="https://www.youtube.com/watch?v=aqz-KE-bpKQ"><img src="https://img.youtube.com/vi/aqz-KE-bpKQ/0.jpg"></a>
+        <a href="https://www.youtube.com/watch?v=ScMzIvxBSi4"><img src="https://img.youtube.com/vi/ScMzIvxBSi4/0.jpg"></a>
     </div>
 </div>
 
 <!-- CTA -->
 <div class="cta">
-    <h2>Ready to scale your business?</h2>
+    <h2>Ready to Grow Your Business?</h2>
     <a href="/pages/contact.html" class="btn">Contact Us</a>
 </div>
 
@@ -275,15 +293,17 @@ footer a:hover {
     <div class="footer-columns">
 
         <div>
-            <h3>WITTYMINDS</h3>
-            <p>AI • Cloud • Digital Solutions</p>
+            <h3>About</h3>
+            <p>WITTYMINDS TECHNOLOGIES</p>
+            <p>AI • Cloud • Digital Transformation</p>
         </div>
 
         <div>
             <h3>Quick Links</h3>
             <a href="/pages/services.html">Services</a><br>
             <a href="/pages/products.html">Products</a><br>
-            <a href="/pages/portfolio.html">Portfolio</a>
+            <a href="/pages/portfolio.html">Portfolio</a><br>
+            <a href="/pages/contact.html">Contact</a>
         </div>
 
         <div>
@@ -303,7 +323,7 @@ footer a:hover {
 </footer>
 
 <div class="bottom-bar">
-© 2026 WITTYMINDS TECHNOLOGIES
+© 2026 WITTYMINDS TECHNOLOGIES | All Rights Reserved
 </div>
 
 <!-- WHATSAPP -->
