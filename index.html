@@ -15,7 +15,7 @@ body {
     color: #fff;
 }
 
-/* 🔥 NAVBAR (TAB STYLE) */
+/* 🔥 NAVBAR */
 .navbar {
     position: sticky;
     top: 0;
@@ -24,36 +24,35 @@ body {
     backdrop-filter: blur(12px);
     display: flex;
     align-items: center;
-    padding: 12px 30px;
+    padding: 14px 40px;
 }
 
-/* LOGO */
 .logo {
-    font-size: 20px;
+    font-size: 22px;
     font-weight: bold;
     margin-right: 40px;
 }
 
-/* NAV LINKS (LEFT TO RIGHT TABS) */
+/* BIGGER TABS */
 .nav-links {
     display: flex;
-    gap: 10px;
+    gap: 14px;
 }
 
-/* TAB STYLE */
 .nav-links a {
-    padding: 10px 18px;
-    font-size: 16px;
+    padding: 12px 22px;
+    font-size: 17px;
+    font-weight: 500;
     color: #e2e8f0;
     text-decoration: none;
-    border-radius: 10px;
-    transition: all 0.25s ease;
+    border-radius: 30px;
     background: rgba(255,255,255,0.05);
+    transition: all 0.25s ease;
 }
 
-/* HOVER EFFECT */
+/* SMOOTH HOVER */
 .nav-links a:hover {
-    transform: scale(1.1);
+    transform: scale(1.05);
     background: #38bdf8;
     color: #0f172a;
 }
@@ -92,7 +91,7 @@ body {
 }
 
 .card:hover {
-    transform: translateY(-8px) scale(1.02);
+    transform: translateY(-8px);
     box-shadow: 0 12px 30px rgba(0,0,0,0.4);
 }
 
@@ -114,10 +113,37 @@ body {
     margin-top: 40px;
 }
 
-/* 🔥 FOOTER IMPROVED */
+/* 🔥 YOUTUBE SHOWCASE */
+.youtube-section {
+    padding: 60px 40px;
+}
+
+.youtube-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.video-card {
+    border-radius: 14px;
+    overflow: hidden;
+    transition: 0.3s;
+}
+
+.video-card img {
+    width: 100%;
+    border-radius: 12px;
+}
+
+.video-card:hover {
+    transform: scale(1.05);
+}
+
+/* 🔥 FOOTER */
 footer {
     background: #020617;
     padding: 60px 40px;
+    border-top: 1px solid rgba(255,255,255,0.08);
 }
 
 .footer-columns {
@@ -127,7 +153,7 @@ footer {
 }
 
 footer h3 {
-    margin-bottom: 12px;
+    margin-bottom: 14px;
     color: #38bdf8;
 }
 
@@ -151,7 +177,6 @@ footer a:hover {
     font-size: 22px;
     padding: 14px 16px;
     border-radius: 50%;
-    text-decoration: none;
 }
 
 /* COPYRIGHT */
@@ -167,7 +192,7 @@ footer a:hover {
 
 <body>
 
-<!-- 🔥 NAVBAR -->
+<!-- NAVBAR -->
 <div class="navbar">
     <div class="logo">WITTYMINDS</div>
 
@@ -211,14 +236,39 @@ footer a:hover {
     </a>
 </div>
 
+<!-- 🔥 YOUTUBE SHOWCASE -->
+<div class="youtube-section">
+    <h2 class="section-title">Our Product Demos</h2>
+
+    <div class="youtube-grid">
+
+        <a href="https://www.youtube.com/watch?v=ysz5S6PUM-U" target="_blank" class="video-card">
+            <img src="https://img.youtube.com/vi/ysz5S6PUM-U/0.jpg">
+        </a>
+
+        <a href="https://www.youtube.com/watch?v=jNQXAC9IVRw" target="_blank" class="video-card">
+            <img src="https://img.youtube.com/vi/jNQXAC9IVRw/0.jpg">
+        </a>
+
+        <a href="https://www.youtube.com/watch?v=aqz-KE-bpKQ" target="_blank" class="video-card">
+            <img src="https://img.youtube.com/vi/aqz-KE-bpKQ/0.jpg">
+        </a>
+
+        <a href="https://www.youtube.com/watch?v=ScMzIvxBSi4" target="_blank" class="video-card">
+            <img src="https://img.youtube.com/vi/ScMzIvxBSi4/0.jpg">
+        </a>
+
+    </div>
+</div>
+
 <!-- FOOTER -->
 <footer>
     <div class="footer-columns">
 
         <div>
-            <h3>Company</h3>
+            <h3>About Us</h3>
             <p>WITTYMINDS TECHNOLOGIES</p>
-            <p>AI • Cloud • Digital Transformation</p>
+            <p>We build AI, Cloud & Digital solutions for global clients.</p>
         </div>
 
         <div>
@@ -233,7 +283,7 @@ footer a:hover {
             <h3>Policies</h3>
             <a href="/pages/refund-policy.html">Refund Policy</a><br>
             <a href="/pages/privacy-policy.html">Privacy Policy</a><br>
-            <a href="/pages/terms.html">Terms & Conditions</a>
+            <a href="/pages/terms.html">Terms</a>
         </div>
 
         <div>
