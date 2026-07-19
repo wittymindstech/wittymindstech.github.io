@@ -1,19 +1,56 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<title>Digital Advertising Services | WittyMinds Tech</title>
-<meta name="description" content="Result-driven digital advertising and marketing solutions for your brand." />
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>Digital Advertising | WittyMinds Technologies</title>
+	<meta name="description" content="Performance-driven digital advertising and GenAI-powered ad creatives for faster campaign launches and measurable ROI." />
+	<link rel="preconnect" href="https://fonts.googleapis.com" />
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+	<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+	<style>
+		:root { --bg:#07111f; --text:#f7f8fc; --muted:#97a8c1; --accent:#3b82f6; --accent-2:#7c3aed; --border:rgba(255,255,255,0.13); }
+		* { box-sizing: border-box; }
+		body { margin:0; font-family:'Inter',sans-serif; background:linear-gradient(135deg,#050816,#0b1730 35%,#121b3d); color:var(--text); line-height:1.6; }
+		a { color:inherit; text-decoration:none; }
+		.container { width:min(1120px,calc(100% - 32px)); margin:0 auto; }
+		.hero { padding:90px 0 60px; background:radial-gradient(circle at top right, rgba(59,130,246,.25), transparent 35%); }
+		.hero-card { border:1px solid var(--border); background:rgba(255,255,255,.06); padding:28px; border-radius:24px; box-shadow:0 20px 50px rgba(0,0,0,.28); }
+		.eyebrow { display:inline-block; padding:8px 12px; border-radius:999px; background:rgba(59,130,246,.14); color:#8bb8ff; font-size:.82rem; font-weight:700; text-transform:uppercase; letter-spacing:.04em; margin-bottom:14px; }
+		h1 { font-size:clamp(2rem,3.4vw,3rem); margin:0 0 12px; }
+		p { color:var(--muted); margin:0 0 16px; }
+		.btn { display:inline-flex; align-items:center; gap:8px; padding:12px 18px; border-radius:999px; font-weight:700; background:linear-gradient(90deg,var(--accent),var(--accent-2)); color:#fff; }
+		.grid { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:20px; margin-top:26px; }
+		.card { padding:20px; border-radius:20px; background:rgba(255,255,255,.05); border:1px solid var(--border); }
+		.card h3 { margin-top:0; }
+		.hero-img { width:100%; border-radius:24px; margin-top:26px; border:1px solid var(--border); }
+		.footer { padding:24px 0 40px; color:var(--muted); }
+		@media (max-width: 720px){ .grid{grid-template-columns:1fr;} }
+	</style>
 </head>
 <body>
-<h1>Digital Advertising & Marketing</h1>
-<p>Grow your brand visibility and generate leads with our targeted advertising strategies.</p>
-<ul>
-<li>Google Ads & PPC Campaigns</li>
-<li>Social Media Advertising</li>
-<li>SEO & Content Marketing</li>
-<li>Brand Strategy & Campaign Design</li>
-<li>Analytics & Performance Tracking</li>
-</ul>
+	<section class="hero">
+		<div class="container hero-card">
+			<div class="eyebrow"><i class="fa-solid fa-bullhorn"></i> Digital Advertising</div>
+			<h1>Performance-driven advertising & GenAI-powered creative production.</h1>
+			<p>We combine data, creative testing, and generative AI to deliver ad creatives and campaign strategies that convert.</p>
+			<a class="btn" href="index.html#contact"><i class="fa-solid fa-paper-plane"></i> Start a Campaign</a>
+			<img class="hero-img" src="assets/images/aiads.jpg" alt="Digital advertising and GenAI ads" />
+			<div class="grid">
+				<div class="card">
+					<h3>Campaign services</h3>
+					<p>Audience research, ad copy & creative, paid social & search campaigns, A/B testing, and conversion optimization.</p>
+				</div>
+				<div class="card">
+					<h3>GenAI creative</h3>
+					<p>Rapid ad concepts, video cuts, thumbnails, and copy variants generated and iterated for high CTR and ROI.</p>
+				</div>
+			</div>
+		</div>
+	</section>
+	<div class="container footer">
+		<a href="index.html"><i class="fa-solid fa-arrow-left"></i> Back to Home</a>
+	</div>
 </body>
 </html>

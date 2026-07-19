@@ -1,0 +1,24 @@
+<svg width="1200" height="675" viewBox="0 0 1200 675" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1200" height="675" rx="36" fill="#07111F"/>
+  <rect x="36" y="36" width="1128" height="603" rx="28" fill="url(#bg1)"/>
+  <circle cx="905" cy="212" r="170" fill="#2DD4BF" fill-opacity="0.18"/>
+  <circle cx="316" cy="488" r="220" fill="#6366F1" fill-opacity="0.24"/>
+  <rect x="260" y="218" width="310" height="203" rx="24" fill="#050816" stroke="#C7D2FE" stroke-width="8"/>
+  <rect x="287" y="245" width="256" height="120" rx="16" fill="#E2E8F0"/>
+  <rect x="386" y="362" width="58" height="20" rx="10" fill="#94A3B8"/>
+  <rect x="615" y="215" width="230" height="220" rx="34" fill="#0F172A" stroke="#F8FAFC" stroke-width="8"/>
+  <rect x="650" y="248" width="160" height="94" rx="20" fill="#8B5CF6"/>
+  <rect x="678" y="353" width="104" height="18" rx="9" fill="#CBD5E1"/>
+  <path d="M521 224C521 203.013 537.013 187 558 187H590C610.987 187 627 203.013 627 224V242H521V224Z" fill="#E2E8F0"/>
+  <path d="M543 242H606V348C606 357.941 597.941 366 588 366H561C551.059 366 543 357.941 543 348V242Z" fill="#F8FAFC"/>
+  <rect x="555" y="260" width="36" height="58" rx="18" fill="#6366F1"/>
+  <rect x="600" y="260" width="36" height="58" rx="18" fill="#6366F1"/>
+  <rect x="440" y="410" width="400" height="26" rx="13" fill="#F8FAFC" fill-opacity="0.2"/>
+  <path d="M226 482C278.6 440.4 357.4 428 438 436.8" stroke="#F8FAFC" stroke-width="12" stroke-linecap="round"/>
+  <defs>
+    <linearGradient id="bg1" x1="95" y1="72" x2="1124" y2="610" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#13223E"/>
+      <stop offset="1" stop-color="#1F3B6C"/>
+    </linearGradient>
+  </defs>
+</svg>
