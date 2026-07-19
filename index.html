@@ -1,344 +1,1015 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>WITTYMINDS TECHNOLOGIES</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>WittyMinds Technologies | AI, Software & Cloud Solutions</title>
+  <meta name="description" content="WittyMinds Technologies helps businesses grow with AI automation, app development, cloud solutions, cybersecurity and digital marketing." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <style>
+    :root {
+      --bg: #07111f;
+      --bg-soft: #0f1b2c;
+      --surface: rgba(255,255,255,0.06);
+      --surface-strong: rgba(255,255,255,0.12);
+      --text: #f7f8fc;
+      --muted: #9fb0c9;
+      --accent: #2f6bff;
+      --accent-2: #7c4dff;
+      --accent-3: #2dd4bf;
+      --border: rgba(255,255,255,0.12);
+      --shadow: 0 20px 45px rgba(0,0,0,0.28);
+      --radius: 24px;
+    }
 
-<style>
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: 'Inter', sans-serif;
+      background: linear-gradient(135deg, #050816 0%, #0c1530 35%, #121b3d 100%);
+      color: var(--text);
+      line-height: 1.6;
+      position: relative;
+      overflow-x: hidden;
+    }
+    body::before,
+    body::after {
+      content: '';
+      position: fixed;
+      inset: auto;
+      width: 320px;
+      height: 320px;
+      border-radius: 50%;
+      filter: blur(90px);
+      opacity: 0.45;
+      pointer-events: none;
+      z-index: 0;
+      animation: pulse 8s ease-in-out infinite;
+    }
+    body::before { top: -80px; left: -80px; background: rgba(47,107,255,0.48); }
+    body::after { right: -100px; bottom: 0; background: rgba(255, 107, 53, 0.28); animation-delay: 2s; }
+    @keyframes pulse {
+      0%, 100% { transform: scale(1); opacity: 0.35; }
+      50% { transform: scale(1.12); opacity: 0.55; }
+    }
+    a { color: inherit; text-decoration: none; }
+    img { max-width: 100%; display: block; }
+    .container { width: min(1180px, calc(100% - 32px)); margin: 0 auto; }
+    .section { padding: 90px 0; }
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 14px;
+      border-radius: 999px;
+      background: rgba(47,107,255,0.14);
+      border: 1px solid rgba(47,107,255,0.2);
+      color: #8bb8ff;
+      font-size: 0.9rem;
+      margin-bottom: 18px;
+      font-weight: 600;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+    }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      padding: 14px 24px;
+      border-radius: 999px;
+      font-weight: 700;
+      transition: transform 0.25s ease, box-shadow 0.25s ease, background 0.25s ease;
+    }
+    .btn:hover { transform: translateY(-2px); }
+    .btn-primary {
+      color: white;
+      background: linear-gradient(90deg, #3b82f6 0%, #7c3aed 45%, #f43f5e 100%);
+      box-shadow: 0 12px 35px rgba(124,58,237,0.35);
+    }
+    .btn-secondary {
+      color: var(--text);
+      background: rgba(255,255,255,0.10);
+      border: 1px solid rgba(255,255,255,0.16);
+    }
 
-/* GLOBAL */
-body {
-    margin: 0;
-    font-family: 'Poppins', sans-serif;
-    background: #0f172a;
-    color: white;
-}
+    .topbar {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      backdrop-filter: blur(14px);
+      background: rgba(7,17,31,0.9);
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+    }
+    .topbar, .hero, .section, footer {
+      position: relative;
+      z-index: 1;
+    }
+    .navbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 16px 0;
+      gap: 16px;
+    }
+    .brand {
+      font-size: 1.15rem;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: #fff;
+    }
+    .brand span { color: var(--accent-3); }
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+    .nav-links a {
+      padding: 10px 14px;
+      border-radius: 999px;
+      color: var(--muted);
+      font-weight: 600;
+      transition: background 0.25s ease, color 0.25s ease;
+    }
+    .nav-links a:hover, .nav-links a.active { background: rgba(255,255,255,0.08); color: var(--text); }
+    .menu-toggle { display: none; }
 
-/* NAVBAR */
-.navbar {
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-    background: rgba(15,23,42,0.95);
-    backdrop-filter: blur(10px);
-    display: flex;
-    align-items: center;
-    padding: 15px 40px;
-}
+    .hero {
+      padding: 90px 0 60px;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero::before {
+      content: '';
+      position: absolute;
+      inset: -20% 50% auto auto;
+      width: 520px;
+      height: 520px;
+      background: radial-gradient(circle, rgba(47,107,255,0.3), transparent 70%);
+      filter: blur(20px);
+      pointer-events: none;
+    }
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 30px;
+      align-items: center;
+    }
+    .hero h1 {
+      font-size: clamp(2.2rem, 4vw, 3.8rem);
+      line-height: 1.05;
+      margin: 0 0 18px;
+      font-weight: 800;
+      background: linear-gradient(90deg, #ffffff 0%, #9edbff 35%, #ffd166 70%, #ff5f7d 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      text-shadow: 0 0 28px rgba(126, 169, 255, 0.16);
+    }
+    .hero p { font-size: 1.05rem; color: var(--muted); max-width: 650px; margin: 0 0 26px; }
+    .hero-actions { display: flex; flex-wrap: wrap; gap: 12px; margin-bottom: 24px; }
+    .hero-highlights {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 14px;
+      margin-top: 20px;
+    }
+    .hero-highlights .item {
+      background: rgba(255,255,255,0.05);
+      border: 1px solid var(--border);
+      padding: 14px;
+      border-radius: 16px;
+    }
+    .hero-highlights .item strong { display: block; font-size: 1.1rem; margin-bottom: 4px; }
+    .hero-highlights .item span { color: var(--muted); font-size: 0.92rem; }
+    .hero-card {
+      background: linear-gradient(145deg, rgba(255,255,255,0.18), rgba(255,255,255,0.06));
+      border: 1px solid rgba(255,255,255,0.16);
+      border-radius: var(--radius);
+      padding: 24px;
+      box-shadow: var(--shadow);
+      backdrop-filter: blur(16px);
+    }
+    .hero-card h3 { margin: 0 0 10px; font-size: 1.2rem; }
+    .hero-card ul { padding-left: 18px; color: var(--muted); }
+    .hero-card li { margin-bottom: 8px; }
 
-.logo {
-    font-size: 22px;
-    font-weight: bold;
-    margin-right: 40px;
-}
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 16px;
+      margin-top: 22px;
+    }
+    .promo-banner {
+      margin: 24px 0 0;
+      padding: 24px 28px;
+      border-radius: 24px;
+      background: linear-gradient(90deg, rgba(59,130,246,0.24), rgba(255, 107, 53, 0.2), rgba(45,212,191,0.18));
+      border: 1px solid rgba(255,255,255,0.16);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+    .promo-banner h3 {
+      margin: 0 0 6px;
+      font-size: 1.15rem;
+    }
+    .promo-banner p {
+      margin: 0;
+      color: var(--muted);
+    }
+    .stat-card {
+      padding: 20px;
+      border-radius: 18px;
+      background: rgba(255,255,255,0.05);
+      border: 1px solid var(--border);
+      text-align: center;
+    }
+    .stat-card strong { font-size: 1.5rem; color: #fff; display: block; }
+    .stat-card span { color: var(--muted); font-size: 0.95rem; }
 
-.nav-links {
-    display: flex;
-    gap: 14px;
-}
+    .section-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: end;
+      gap: 16px;
+      margin-bottom: 24px;
+    }
+    .section-head h2 { margin: 0; font-size: 1.8rem; }
+    .section-head p { margin: 0; color: var(--muted); max-width: 640px; }
 
-.nav-links a {
-    padding: 12px 22px;
-    font-size: 17px;
-    font-weight: 500;
-    border-radius: 30px;
-    text-decoration: none;
-    color: #e2e8f0;
-    background: rgba(255,255,255,0.05);
-    transition: 0.3s;
-}
+    .card-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 20px;
+    }
+    .service-card, .feature-card, .testimonial-card, .contact-card {
+      background: rgba(255,255,255,0.05);
+      border: 1px solid var(--border);
+      border-radius: 22px;
+      padding: 22px;
+      box-shadow: var(--shadow);
+      transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+    }
+    .service-card.featured {
+      border-color: rgba(45,212,191,0.38);
+      box-shadow: 0 16px 40px rgba(45,212,191,0.16);
+      background: linear-gradient(145deg, rgba(59,130,246,0.16), rgba(255,107,53,0.12), rgba(255,255,255,0.05));
+    }
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 7px 10px;
+      border-radius: 999px;
+      background: rgba(45,212,191,0.16);
+      color: #9cf1e7;
+      font-size: 0.8rem;
+      font-weight: 700;
+      margin-bottom: 10px;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+    .service-card:hover, .feature-card:hover, .testimonial-card:hover { transform: translateY(-4px); border-color: rgba(47,107,255,0.35); }
+    .service-card img {
+      height: 180px;
+      width: 100%;
+      object-fit: cover;
+      border-radius: 16px;
+      margin-bottom: 16px;
+    }
+    .service-card h3 { margin: 0 0 8px; font-size: 1.1rem; }
+    .service-card p { margin: 0 0 14px; color: var(--muted); font-size: 0.95rem; }
+    .service-card .link { color: #8bb8ff; font-weight: 700; }
 
-.nav-links a:hover {
-    background: #6366f1;
-    transform: scale(1.05);
-    color: white;
-}
+    .steps { display: grid; grid-template-columns: repeat(3, minmax(0,1fr)); gap: 18px; }
+    .step { padding: 22px; background: rgba(255,255,255,0.04); border: 1px solid var(--border); border-radius: 20px; }
+    .step .num { display: inline-grid; place-items: center; width: 42px; height: 42px; border-radius: 50%; background: linear-gradient(90deg, var(--accent), var(--accent-2)); font-weight: 700; margin-bottom: 12px; }
+    .step h3 { margin: 0 0 8px; }
+    .step p { margin: 0; color: var(--muted); }
 
-/* HERO */
-.hero {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    padding: 100px 20px;
-    background: linear-gradient(135deg, #6366f1, #9333ea);
-}
+    .video-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 18px;
+      margin-top: 16px;
+    }
+    .video-card {
+      display: block;
+      border-radius: 20px;
+      overflow: hidden;
+      border: 1px solid var(--border);
+      background: rgba(255,255,255,0.05);
+      box-shadow: var(--shadow);
+      transition: transform 0.25s ease, border-color 0.25s ease;
+    }
+    .video-card:hover { transform: translateY(-4px); border-color: rgba(47,107,255,0.35); }
+    .video-card img {
+      width: 100%;
+      aspect-ratio: 16 / 9;
+      object-fit: cover;
+    }
 
-.hero h1 {
-    font-size: 48px;
-}
+    .contact-wrap {
+      display: grid;
+      grid-template-columns: 1.05fr 0.95fr;
+      gap: 20px;
+      align-items: center;
+    }
+    .contact-card { padding: 28px; }
+    .contact-card p { color: var(--muted); }
+    .contact-list { display: grid; gap: 10px; margin-top: 16px; }
+    .contact-list a { color: #dce7ff; }
 
-.hero p {
-    margin: 15px 0;
-    color: #e0e7ff;
-}
+    footer {
+      padding: 36px 0 28px;
+      border-top: 1px solid rgba(255,255,255,0.08);
+      color: var(--muted);
+      background: rgba(2,10,22,0.75);
+    }
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1.1fr 1fr 1fr;
+      gap: 20px;
+    }
+    .footer-grid h3 { color: #fff; margin-top: 0; }
+    .footer-grid a { color: var(--muted); display: inline-block; margin-bottom: 8px; }
+    .footer-grid a:hover { color: #fff; }
+    .bottom-bar {
+      display: flex;
+      justify-content: space-between;
+      gap: 12px;
+      font-size: 0.95rem;
+      margin-top: 24px;
+      padding-top: 18px;
+      border-top: 1px solid rgba(255,255,255,0.08);
+    }
+    .socials { display: flex; gap: 12px; flex-wrap: wrap; }
+    .socials a { color: #fff; }
 
-.btn {
-    padding: 12px 25px;
-    background: white;
-    color: #6366f1;
-    border-radius: 30px;
-    text-decoration: none;
-    font-weight: bold;
-}
+    .whatsapp-float {
+      position: fixed;
+      right: 20px;
+      bottom: 20px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 56px;
+      height: 56px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #25d366, #128c7e);
+      color: white;
+      font-size: 1.4rem;
+      box-shadow: 0 10px 24px rgba(18,140,126,0.3);
+      z-index: 1100;
+      animation: bob 2.2s ease-in-out infinite;
+    }
+    .book-popup {
+      position: fixed;
+      right: 22px;
+      bottom: 92px;
+      width: min(320px, calc(100% - 28px));
+      padding: 18px 18px 16px;
+      border-radius: 18px;
+      background: linear-gradient(135deg, rgba(10,24,46,0.98), rgba(23,42,74,0.96));
+      border: 1px solid rgba(255,255,255,0.14);
+      box-shadow: 0 18px 40px rgba(0,0,0,0.35);
+      z-index: 1100;
+      animation: popupIn 0.45s ease-out;
+    }
+    .book-popup h4 {
+      margin: 0 0 8px;
+      font-size: 1rem;
+      color: white;
+    }
+    .book-popup p {
+      margin: 0 0 12px;
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+    .book-popup .actions { display: flex; gap: 10px; flex-wrap: wrap; }
+    .book-popup .btn { padding: 10px 14px; font-size: 0.92rem; }
+    .book-popup .close-btn {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      border: 0;
+      background: rgba(255,255,255,0.08);
+      color: white;
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      cursor: pointer;
+    }
+    @keyframes bob {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-4px); }
+    }
+    .modal-overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(2, 8, 23, 0.78);
+      backdrop-filter: blur(10px);
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+      z-index: 1200;
+    }
+    .modal-overlay.open { display: flex; }
+    .modal-card {
+      width: min(460px, 100%);
+      background: linear-gradient(145deg, rgba(10,24,46,0.98), rgba(20,32,60,0.96));
+      border: 1px solid rgba(255,255,255,0.15);
+      border-radius: 24px;
+      padding: 24px;
+      box-shadow: 0 24px 60px rgba(0,0,0,0.4);
+      position: relative;
+      animation: popupIn 0.35s ease-out;
+    }
+    .modal-card h3 { margin: 0 0 8px; font-size: 1.25rem; }
+    .modal-card p { margin: 0 0 16px; color: var(--muted); }
+    .modal-form { display: grid; gap: 12px; }
+    .modal-form input,
+    .modal-form textarea,
+    .modal-form select {
+      width: 100%;
+      padding: 12px 14px;
+      border-radius: 12px;
+      border: 1px solid rgba(255,255,255,0.12);
+      background: rgba(255,255,255,0.08);
+      color: white;
+      font: inherit;
+    }
+    .modal-form input::placeholder,
+    .modal-form textarea::placeholder { color: #8fa4c4; }
+    .modal-form textarea { min-height: 100px; resize: vertical; }
+    .modal-actions { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 6px; }
+    .status-text { margin-top: 10px; color: #9cf1e7; font-size: 0.95rem; }
+    .modal-close {
+      position: absolute;
+      top: 12px;
+      right: 12px;
+      border: 0;
+      width: 34px;
+      height: 34px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.1);
+      color: white;
+      cursor: pointer;
+    }
+    @keyframes popupIn {
+      from { opacity: 0; transform: translateY(12px) scale(0.97); }
+      to { opacity: 1; transform: translateY(0) scale(1); }
+    }
 
-/* SECTION */
-.section-title {
-    text-align: center;
-    font-size: 32px;
-    margin: 50px 0 20px;
-}
+    @media (max-width: 900px) {
+      .hero-grid, .contact-wrap { grid-template-columns: 1fr; }
+      .card-grid { grid-template-columns: 1fr 1fr; }
+      .stats-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .steps { grid-template-columns: 1fr; }
+      .footer-grid { grid-template-columns: 1fr; }
+    }
 
-/* GRID */
-.container {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px,1fr));
-    gap: 25px;
-    padding: 40px;
-}
-
-/* CARD */
-.card {
-    background: #1e293b;
-    border-radius: 15px;
-    overflow: hidden;
-    transition: 0.3s;
-    text-decoration: none;
-    color: white;
-}
-
-.card:hover {
-    transform: translateY(-8px);
-}
-
-.card img {
-    width: 100%;
-    height: 170px;
-    object-fit: cover;
-}
-
-.card h3 {
-    padding: 15px;
-    text-align: center;
-}
-
-/* YOUTUBE */
-.youtube {
-    padding: 60px;
-}
-
-.youtube-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px,1fr));
-    gap: 20px;
-}
-
-.youtube img {
-    width: 100%;
-    border-radius: 10px;
-    transition: 0.3s;
-}
-
-.youtube img:hover {
-    transform: scale(1.05);
-}
-
-/* CTA */
-.cta {
-    text-align: center;
-    padding: 60px;
-    background: linear-gradient(135deg, #9333ea, #6366f1);
-}
-
-/* FOOTER */
-footer {
-    background: #020617;
-    padding: 60px 40px;
-}
-
-.footer-columns {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px,1fr));
-    gap: 40px;
-}
-
-footer h3 {
-    color: #6366f1;
-}
-
-footer a, footer p {
-    color: #cbd5f5;
-    text-decoration: none;
-}
-
-footer a:hover {
-    color: #6366f1;
-}
-
-/* COPYRIGHT */
-.bottom-bar {
-    text-align: center;
-    padding: 15px;
-    background: #020617;
-    color: #64748b;
-}
-
-/* WHATSAPP */
-.whatsapp {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    background: #25D366;
-    padding: 14px;
-    border-radius: 50%;
-    text-decoration: none;
-    color: white;
-}
-
-</style>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    @media (max-width: 720px) {
+      .menu-toggle { display: inline-flex; align-items: center; justify-content: center; width: 44px; height: 44px; border-radius: 50%; background: rgba(255,255,255,0.08); border: 1px solid var(--border); color: white; }
+      .nav-links {
+        display: none;
+        position: absolute;
+        top: 72px;
+        left: 16px;
+        right: 16px;
+        padding: 12px;
+        background: rgba(7,17,31,0.98);
+        border: 1px solid var(--border);
+        border-radius: 18px;
+        flex-direction: column;
+        align-items: stretch;
+      }
+      .nav-links.open { display: flex; }
+      .card-grid { grid-template-columns: 1fr; }
+      .stats-grid { grid-template-columns: 1fr; }
+      .hero-highlights { grid-template-columns: 1fr; }
+      .section-head { flex-direction: column; align-items: start; }
+      .bottom-bar { flex-direction: column; }
+    }
+  </style>
 </head>
-
 <body>
-
-<!-- NAVBAR -->
-<div class="navbar">
-    <div class="logo">WITTYMINDS</div>
-
-    <div class="nav-links">
-        <a href="/pages/services.html">Services</a>
-        <a href="/pages/products.html">Products</a>
-        <a href="/pages/digital-marketing.html">Digital Marketing</a>
-        <a href="/pages/genai.html">GenAI Services</a>
-        <a href="/pages/portfolio.html">Portfolio</a>
-        <a href="/pages/contact.html">Contact Us</a>
+  <header class="topbar">
+    <div class="container navbar">
+      <a href="#home" class="brand">Witty<span>Minds</span></a>
+      <button class="menu-toggle" aria-label="Toggle menu"><i class="fa-solid fa-bars"></i></button>
+      <nav class="nav-links" id="nav-links">
+        <a href="#home" class="active">Home</a>
+        <a href="#services">Services</a>
+        <a href="#solutions">Solutions</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+      </nav>
     </div>
-</div>
+  </header>
 
-<!-- HERO -->
-<div class="hero">
-    <div>
-        <h1>Use AI to Automate Your Services</h1>
-        <p>Scale faster, reduce cost, and grow your customer base globally</p>
-        <a href="/pages/contact.html" class="btn">Get Started</a>
+  <main id="home">
+    <section class="hero">
+      <div class="container hero-grid">
+        <div>
+          <div class="eyebrow"><i class="fa-solid fa-bolt"></i> AI • Software • Cloud • Growth</div>
+          <h1>Agentic AI Production-Ready Software for the next wave of growth.</h1>
+          <p>We design and deploy intelligent agents, AI copilots, and production-ready software that automates work, accelerates decisions, and turns ideas into revenue faster.</p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#services"><i class="fa-solid fa-arrow-right"></i> Explore Agentic AI</a>
+            <a class="btn btn-secondary" href="mailto:admin@wittymindstech.com"><i class="fa-solid fa-comments"></i> Book a Strategy Call</a>
+          </div>
+          <div class="hero-highlights">
+            <div class="item"><strong>Agentic</strong><span>Workflow automation</span></div>
+            <div class="item"><strong>Secure</strong><span>Enterprise-ready systems</span></div>
+            <div class="item"><strong>Fast</strong><span>Launch cycles</span></div>
+          </div>
+        </div>
+
+        <div class="hero-card">
+          <h3>What we help with</h3>
+          <ul>
+            <li>AI workflow automation for repetitive operations</li>
+            <li>Modern websites and mobile app development</li>
+            <li>Cloud infrastructure, cybersecurity, and analytics</li>
+            <li>Growth-focused digital marketing campaigns</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="container stats-grid">
+        <div class="stat-card">
+          <strong data-count="40">0</strong>
+          <span>Projects Delivered</span>
+        </div>
+        <div class="stat-card">
+          <strong data-count="12">0</strong>
+          <span>Countries Served</span>
+        </div>
+        <div class="stat-card">
+          <strong data-count="98">0</strong>
+          <span>Client Satisfaction</span>
+        </div>
+        <div class="stat-card">
+          <strong data-count="24">0</strong>
+          <span>Hours Response Time</span>
+        </div>
+      </div>
+
+      <div class="container">
+        <div class="promo-banner">
+          <div>
+            <h3>Book A Job Oriented Course with US on GenAI</h3>
+            <p>Kickstart your career with practical GenAI training, real-world projects, and placement-focused guidance.</p>
+          </div>
+          <button class="btn btn-primary open-enroll-modal" type="button" data-service="GenAI Course"><i class="fa-solid fa-graduation-cap"></i> Enroll Now</button>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="services">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <div class="eyebrow"><i class="fa-solid fa-sparkles"></i> Our services</div>
+            <h2>Services designed for modern growth.</h2>
+          </div>
+          <p>From intelligent automation to secure cloud architecture, our team delivers practical technology that improves your speed, resilience, and revenue.</p>
+        </div>
+
+        <div class="card-grid">
+          <a class="service-card featured" href="ai-ml.html">
+            <img src="assets/images/ai-assistant.jpg" alt="Agentic AI software" />
+            <div class="badge"><i class="fa-solid fa-rocket"></i> Featured</div>
+            <h3>Agentic AI Production-Ready Software</h3>
+            <p>Launch autonomous AI assistants, copilots, and workflow agents with secure architecture and real-world deployment.</p>
+            <span class="link">Explore now →</span>
+          </a>
+          <a class="service-card" href="app-development.html">
+            <img src="assets/images/app-dev.jpg" alt="App development" />
+            <h3>App Development</h3>
+            <p>Native and cross-platform applications to power your products and customer experience.</p>
+            <span class="link">Learn more →</span>
+          </a>
+          <a class="service-card" href="web-development.html">
+            <img src="assets/images/webdev.jpg" alt="Web development" />
+            <h3>Web Development</h3>
+            <p>Fast, scalable websites and web apps with modern UX and SEO-friendly structure.</p>
+            <span class="link">Learn more →</span>
+          </a>
+          <a class="service-card" href="ai-ml.html">
+            <img src="assets/images/ai-ml.jpg" alt="AI and machine learning" />
+            <h3>AI / ML Solutions</h3>
+            <p>Automation, prediction, and intelligent assistants that remove manual bottlenecks.</p>
+            <span class="link">Learn more →</span>
+          </a>
+          <a class="service-card" href="cloud-computing.html">
+            <img src="assets/images/cloud.jpg" alt="Cloud computing" />
+            <h3>Cloud Computing</h3>
+            <p>Cloud migration, deployment, and optimization for stable and resilient operations.</p>
+            <span class="link">Learn more →</span>
+          </a>
+          <a class="service-card" href="cybersecurity.html">
+            <img src="assets/images/security.jpg" alt="Cybersecurity" />
+            <h3>Cybersecurity</h3>
+            <p>Security-first design and protection for your users, applications, and data.</p>
+            <span class="link">Learn more →</span>
+          </a>
+          <a class="service-card" href="advertisement.html">
+            <img src="assets/images/digital.jpg" alt="Digital marketing and advertisement" />
+            <h3>Digital Marketing</h3>
+            <p>Performance-driven marketing that helps your brand reach the right audience.</p>
+            <span class="link">Learn more →</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="solutions">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <div class="eyebrow"><i class="fa-solid fa-gears"></i> How we work</div>
+            <h2>A practical roadmap from idea to launch.</h2>
+          </div>
+          <p>Every engagement starts with clarity, moves through rapid execution, and ends with measurable results.</p>
+        </div>
+
+        <div class="steps">
+          <div class="step">
+            <div class="num">1</div>
+            <h3>Discovery</h3>
+            <p>We uncover your goals, audience, workflows, and friction points so the plan is grounded in reality.</p>
+          </div>
+          <div class="step">
+            <div class="num">2</div>
+            <h3>Build</h3>
+            <p>Our team delivers a tailored solution using modern tools, tested architecture, and transparent timelines.</p>
+          </div>
+          <div class="step">
+            <div class="num">3</div>
+            <h3>Scale</h3>
+            <p>We support you with monitoring, enhancement, and optimization so your systems stay reliable as you grow.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="about">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <div class="eyebrow"><i class="fa-solid fa-users"></i> Why clients choose us</div>
+            <h2>Reliable technology partners for ambitious brands.</h2>
+          </div>
+          <p>We combine strategy, design, and engineering to create solutions that feel effortless for your team and your customers.</p>
+        </div>
+
+        <div class="card-grid">
+          <div class="feature-card">
+            <h3>Custom-built systems</h3>
+            <p>Every solution is shaped around your workflows rather than forcing a template.</p>
+          </div>
+          <div class="feature-card">
+            <h3>Fast delivery</h3>
+            <p>We keep the process lean and focused so your launch gets faster without sacrificing quality.</p>
+          </div>
+          <div class="feature-card">
+            <h3>Long-term support</h3>
+            <p>We stay involved after launch to help you evolve, maintain, and improve performance.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="videos">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <div class="eyebrow"><i class="fa-solid fa-play"></i> Featured videos</div>
+            <h2>Watch our latest demos and product highlights.</h2>
+          </div>
+          <p>See how our solutions work in action through short demo videos and walkthroughs.</p>
+        </div>
+
+        <div class="video-grid">
+          <a class="video-card" href="https://www.youtube.com/watch?v=BrTQtCxPTls" target="_blank" rel="noopener noreferrer">
+            <img src="https://img.youtube.com/vi/BrTQtCxPTls/0.jpg" alt="YouTube video thumbnail 1" />
+          </a>
+          <a class="video-card" href="https://www.youtube.com/watch?v=6e69Rq0oefE" target="_blank" rel="noopener noreferrer">
+            <img src="https://img.youtube.com/vi/6e69Rq0oefE/0.jpg" alt="YouTube video thumbnail 2" />
+          </a>
+          <a class="video-card" href="https://www.youtube.com/watch?v=6TL1j743I7c" target="_blank" rel="noopener noreferrer">
+            <img src="https://img.youtube.com/vi/6TL1j743I7c/0.jpg" alt="YouTube video thumbnail 3" />
+          </a>
+          <a class="video-card" href="https://www.youtube.com/watch?v=_se7fo1up4Q" target="_blank" rel="noopener noreferrer">
+            <img src="https://img.youtube.com/vi/_se7fo1up4Q/0.jpg" alt="YouTube video thumbnail 4" />
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="contact">
+      <div class="container contact-wrap">
+        <div class="contact-card">
+          <div class="eyebrow"><i class="fa-solid fa-paper-plane"></i> Let’s talk</div>
+          <h2>Ready to build something meaningful?</h2>
+          <p>Tell us about your idea and we’ll help you shape it into a concrete digital solution with real business impact.</p>
+          <div class="contact-list">
+            <a href="mailto:admin@wittymindstech.com"><i class="fa-solid fa-envelope"></i> admin@wittymindstech.com</a>
+            <a href="tel:+919113957428"><i class="fa-solid fa-phone"></i> +91 9113957428</a>
+            <a href="https://wa.me/918971599350" target="_blank"><i class="fa-brands fa-whatsapp"></i> WhatsApp us</a>
+          </div>
+        </div>
+
+        <div class="contact-card">
+          <div class="eyebrow"><i class="fa-solid fa-star"></i> What clients value</div>
+          <div class="testimonial-card" style="margin-bottom: 12px;">
+            <p>“Their team simplified our workflow and helped us launch faster than expected.”</p>
+            <strong>— Growth-focused startup</strong>
+          </div>
+          <div class="testimonial-card">
+            <p>“Reliable, responsive, and genuinely invested in results.”</p>
+            <strong>— Enterprise operations lead</strong>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer-grid">
+      <div>
+        <h3>WittyMinds Technologies</h3>
+        <p>We design and build modern digital solutions that blend strategy, automation, and growth.</p>
+      </div>
+      <div>
+        <h3>Quick links</h3>
+        <a href="app-development.html">App Development</a><br />
+        <a href="web-development.html">Web Development</a><br />
+        <a href="ai-ml.html">AI / ML</a><br />
+        <a href="products.html">Products</a>
+      </div>
+      <div>
+        <h3>Connect</h3>
+        <a href="mailto:admin@wittymindstech.com">Email</a><br />
+        <a href="https://github.com/wittymindstech" target="_blank">GitHub</a><br />
+        <a href="https://wa.me/918971599350" target="_blank">WhatsApp</a>
+      </div>
     </div>
-</div>
-
-<!-- SERVICES -->
-<h2 class="section-title">Our Services</h2>
-<div class="container">
-
-    <a href="/pages/app-development.html" class="card">
-        <img src="assets/images/app-dev.jpg">
-        <h3>App Development</h3>
-    </a>
-
-    <a href="/pages/web-development.html" class="card">
-        <img src="assets/images/webdev.jpg">
-        <h3>Web Development</h3>
-    </a>
-
-    <a href="/pages/cloud-computing.html" class="card">
-        <img src="assets/images/cloud.jpg">
-        <h3>Cloud Computing</h3>
-    </a>
-
-    <a href="/pages/cybersecurity.html" class="card">
-        <img src="assets/images/security.jpg">
-        <h3>Cybersecurity</h3>
-    </a>
-
-    <a href="/pages/cybersecurity.html" class="card">
-        <img src="assets/images/digital.jpg">
-        <h3>Digital Marketing & Advertisement</h3>
-    </a>
-    <a href="/pages/ai-assistant.html" class="card">
-        <img src="assets/images/ai-assistant.jpg">
-        <h3>AI Assistant</h3>
-    </a>
-
-    <a href="/pages/genai.html" class="card">
-        <img src="assets/images/genai.jpg">
-        <h3>GenAI</h3>
-    </a>
-
-    <a href="/pages/data-analytics.html" class="card">
-        <img src="assets/images/data.jpg">
-        <h3>Data Analytics</h3>
-    </a>
-
-    <a href="/pages/software-consultation.html" class="card">
-        <img src="assets/images/sc.jpg">
-        <h3>Software Consultation</h3>
-    </a>
-
-</div>
-
-<!-- YOUTUBE -->
-<div class="youtube">
-    <h2 class="section-title">Product Demos</h2>
-
-    <div class="youtube-grid">
-        <a href="https://www.youtube.com/watch?v=BrTQtCxPTls"><img src="https://img.youtube.com/vi/BrTQtCxPTls/0.jpg"></a>
-        <a href="https://www.youtube.com/watch?v=6e69Rq0oefE"><img src="https://img.youtube.com/vi/6e69Rq0oefE/0.jpg"></a>
-        <a href="https://www.youtube.com/watch?v=6TL1j743I7c"><img src="https://img.youtube.com/vi/6TL1j743I7c/0.jpg"></a>
-        <a href="https://www.youtube.com/watch?v=_se7fo1up4Q"><img src="https://img.youtube.com/vi/_se7fo1up4Q/0.jpg"></a>
+    <div class="container bottom-bar">
+      <span>© <span id="year"></span> WittyMinds Technologies. All rights reserved.</span>
+      <div class="socials">
+        <a href="https://github.com/wittymindstech" target="_blank"><i class="fa-brands fa-github"></i></a>
+        <a href="https://www.linkedin.com/company/20428176" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
+      </div>
     </div>
-</div>
+  </footer>
 
-<!-- CTA -->
-<div class="cta">
-    <h2>Ready to Grow Your Business?</h2>
-    <a href="/pages/contact.html" class="btn">Contact Us</a>
-</div>
-<footer style="background:#111; color:#fff; text-align:center; padding:20px 0;">
-  <p style="margin:0;">© 2026 wiTTyMinds Technology - Explore our Work through Code repo</p>
-  
-  <div style="margin-top:10px;">
-    <a href="https://github.com/wittymindstech" target="_blank" style="color:#fff; font-size:48px; text-decoration:none;">
-      <i class="fab fa-github"></i>
-    </a>
+  <div class="book-popup" id="bookPopup" role="dialog" aria-label="Book a service popup">
+    <button class="close-btn" id="closePopup" aria-label="Close popup">×</button>
+    <h4>Book a Service with Us</h4>
+    <p>Need a custom AI solution, app, cloud setup, or digital growth plan? Let’s start with a quick consultation.</p>
+    <div class="actions">
+      <button class="btn btn-primary open-enroll-modal" type="button" data-service="Service Consultation"><i class="fa-solid fa-paper-plane"></i> Book Now</button>
+      <a class="btn btn-secondary" href="https://wa.me/918971599350" target="_blank"><i class="fa-brands fa-whatsapp"></i> WhatsApp</a>
+    </div>
   </div>
-</footer>
-<!-- FOOTER -->
-<footer>
-    <div class="footer-columns">
 
-        <div>
-            <h3>About</h3>
-            <p>WITTYMINDS TECHNOLOGIES</p>
-            <p>AI • Cloud • Digital Transformation</p>
+  <div class="modal-overlay" id="enrollModal" aria-hidden="true">
+    <div class="modal-card" role="dialog" aria-modal="true" aria-labelledby="enrollModalTitle">
+      <button class="modal-close" id="closeEnrollModal" type="button" aria-label="Close form">×</button>
+      <h3 id="enrollModalTitle">Book a Service or Enroll</h3>
+      <p>Share your details and we’ll get back to you with the next steps.</p>
+      <form class="modal-form" id="enrollForm">
+        <input type="text" name="name" placeholder="Your Name" required />
+        <input type="email" name="email" placeholder="Your Email" required />
+        <input type="tel" name="phone" placeholder="Phone Number" />
+        <select name="service" id="serviceSelect">
+          <option value="GenAI Course">GenAI Course</option>
+          <option value="Agentic AI Software">Agentic AI Software</option>
+          <option value="App Development">App Development</option>
+          <option value="Web Development">Web Development</option>
+          <option value="Cloud / Cybersecurity">Cloud / Cybersecurity</option>
+          <option value="Digital Marketing">Digital Marketing</option>
+        </select>
+        <textarea name="message" placeholder="Tell us what you need..."></textarea>
+        <div class="modal-actions">
+          <button class="btn btn-primary" type="submit"><i class="fa-solid fa-check"></i> Submit</button>
+          <button class="btn btn-secondary" type="button" id="cancelEnrollModal">Cancel</button>
         </div>
+        <div class="status-text" id="enrollStatus"></div>
+      </form>
+    </div>
+  </div>
 
-        <div>
-            <h3>Quick Links</h3>
-            <a href="/pages/services.html">Services</a><br>
-            <a href="/pages/products.html">Products</a><br>
-            <a href="/pages/portfolio.html">Portfolio</a><br>
-            <a href="/pages/contact.html">Contact</a>
-        </div>
+  <a class="whatsapp-float" href="https://wa.me/918971599350" target="_blank" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
 
-        <div>
-            <h3>Policies</h3>
-            <a href="/pages/privacy-policy.html">Privacy</a><br>
-            <a href="/pages/terms.html">Terms</a>
-        </div>
+  <script>
+    const toggle = document.querySelector('.menu-toggle');
+    const nav = document.getElementById('nav-links');
+    if (toggle && nav) {
+      toggle.addEventListener('click', () => {
+        nav.classList.toggle('open');
+      });
+    }
 
-        <div>
-            <h3>Contact</h3>
-            <p>📧 admin@wittymindstech.com</p>
-            <p>📞 +91 9113957428</p>
-            <p>💬 <a href="https://wa.me/918971599350">WhatsApp</a></p>
-        </div>
-</footer>
+    document.querySelectorAll('.nav-links a').forEach(link => {
+      link.addEventListener('click', () => {
+        document.querySelectorAll('.nav-links a').forEach(item => item.classList.remove('active'));
+        link.classList.add('active');
+        if (nav) nav.classList.remove('open');
+      });
+    });
 
-<div class="bottom-bar">
-© 2026 WITTYMINDS TECHNOLOGIES | All Rights Reserved
-</div>
+    document.getElementById('year').textContent = new Date().getFullYear();
 
-<!-- WHATSAPP -->
-<a href="https://wa.me/918971599350" class="whatsapp">💬</a>
+    const modal = document.getElementById('enrollModal');
+    const closeModalBtn = document.getElementById('closeEnrollModal');
+    const cancelModalBtn = document.getElementById('cancelEnrollModal');
+    const serviceSelect = document.getElementById('serviceSelect');
+    const enrollForm = document.getElementById('enrollForm');
+    const enrollStatus = document.getElementById('enrollStatus');
+    const openModalButtons = document.querySelectorAll('.open-enroll-modal');
+    const FORM_ENDPOINT = window.WITTYMINDS_FORM_ENDPOINT || '';
+    const FIREBASE_CONFIG = window.WITTYMINDS_FIREBASE_CONFIG || {
+      projectId: 'wittymindstech',
+      collectionName: 'wmtech',
+      documentId: 'wmtechcustomers',
+      apiKey: ''
+    };
 
+    function buildFirestorePayload(submission) {
+      const fields = {};
+      Object.entries(submission).forEach(([key, value]) => {
+        fields[key] = { stringValue: String(value) };
+      });
+      return { fields };
+    }
+
+    async function submitToEndpoint(submission) {
+      if (FORM_ENDPOINT) {
+        try {
+          const response = await fetch(FORM_ENDPOINT, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(submission)
+          });
+
+          if (!response.ok) {
+            const text = await response.text();
+            throw new Error(text || `Request failed with ${response.status}`);
+          }
+
+          return { ok: true, message: 'Submitted successfully.' };
+        } catch (error) {
+          return { ok: false, message: error.message || 'Submission failed.' };
+        }
+      }
+
+      if (FIREBASE_CONFIG.projectId) {
+        const collectionPath = FIREBASE_CONFIG.collectionName || 'wmtech';
+        const documentPath = FIREBASE_CONFIG.documentId || 'wmtechcustomers';
+        const firebaseUrl = `https://firestore.googleapis.com/v1/projects/${FIREBASE_CONFIG.projectId}/databases/(default)/documents/${collectionPath}/${documentPath}`;
+        const query = FIREBASE_CONFIG.apiKey ? `?key=${encodeURIComponent(FIREBASE_CONFIG.apiKey)}` : '';
+
+        try {
+          const response = await fetch(`${firebaseUrl}${query}`, {
+            method: 'PATCH',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+              fields: {
+                ...Object.fromEntries(Object.entries(submission).map(([key, value]) => [key, { stringValue: String(value) }])),
+                submittedAt: { stringValue: new Date().toISOString() }
+              }
+            })
+          });
+
+          if (!response.ok) {
+            const text = await response.text();
+            throw new Error(text || `Firebase request failed with ${response.status}`);
+          }
+
+          return { ok: true, message: 'Submitted to Firebase Firestore.' };
+        } catch (error) {
+          return { ok: false, message: error.message || 'Firebase submission failed.' };
+        }
+      }
+
+      return { ok: false, message: 'No endpoint configured. Set window.WITTYMINDS_FORM_ENDPOINT or window.WITTYMINDS_FIREBASE_CONFIG.' };
+    }
+
+    function openModal(serviceValue = 'GenAI Course') {
+      if (serviceSelect) serviceSelect.value = serviceValue;
+      if (modal) {
+        modal.classList.add('open');
+        modal.setAttribute('aria-hidden', 'false');
+      }
+    }
+
+    function closeModal() {
+      if (modal) {
+        modal.classList.remove('open');
+        modal.setAttribute('aria-hidden', 'true');
+      }
+      if (enrollStatus) enrollStatus.textContent = '';
+    }
+
+    openModalButtons.forEach(button => {
+      button.addEventListener('click', () => {
+        openModal(button.getAttribute('data-service') || 'GenAI Course');
+      });
+    });
+
+    if (closeModalBtn) closeModalBtn.addEventListener('click', closeModal);
+    if (cancelModalBtn) cancelModalBtn.addEventListener('click', closeModal);
+    if (modal) {
+      modal.addEventListener('click', (event) => {
+        if (event.target === modal) closeModal();
+      });
+    }
+
+    if (enrollForm) {
+      enrollForm.addEventListener('submit', async (event) => {
+        event.preventDefault();
+        const formData = new FormData(enrollForm);
+        const submission = {
+          name: formData.get('name') || '',
+          email: formData.get('email') || '',
+          phone: formData.get('phone') || '',
+          service: formData.get('service') || '',
+          message: formData.get('message') || '',
+          submittedAt: new Date().toISOString()
+        };
+
+        const stored = JSON.parse(localStorage.getItem('wittyminds_enrollments') || '[]');
+        stored.push(submission);
+        localStorage.setItem('wittyminds_enrollments', JSON.stringify(stored, null, 2));
+
+        const result = await submitToEndpoint(submission);
+
+        if (enrollStatus) {
+          enrollStatus.textContent = result.ok
+            ? 'Thanks! Your request was submitted successfully.'
+            : `Submission saved locally, but the remote endpoint reported: ${result.message}`;
+        }
+
+        const blob = new Blob([JSON.stringify(stored, null, 2)], { type: 'application/json' });
+        const url = URL.createObjectURL(blob);
+        const link = document.createElement('a');
+        link.href = url;
+        link.download = `wittyminds-enrollment-${Date.now()}.json`;
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+        URL.revokeObjectURL(url);
+
+        enrollForm.reset();
+      });
+    }
+
+    const popup = document.getElementById('bookPopup');
+    const closePopup = document.getElementById('closePopup');
+    if (popup && closePopup) {
+      setTimeout(() => {
+        popup.style.display = 'block';
+      }, 1200);
+      closePopup.addEventListener('click', () => {
+        popup.style.display = 'none';
+      });
+    }
+
+    const counters = document.querySelectorAll('[data-count]');
+    const counterObserver = new IntersectionObserver((entries, observer) => {
+      entries.forEach(entry => {
+        if (!entry.isIntersecting) return;
+        const el = entry.target;
+        const target = Number(el.getAttribute('data-count'));
+        const duration = 1400;
+        const start = performance.now();
+        const step = (now) => {
+          const progress = Math.min((now - start) / duration, 1);
+          const current = Math.floor(progress * target);
+          el.textContent = current.toString();
+          if (progress < 1) requestAnimationFrame(step);
+          else el.textContent = `${target}`;
+        };
+        requestAnimationFrame(step);
+        observer.unobserve(el);
+      });
+    }, { threshold: 0.6 });
+
+    counters.forEach(counter => counterObserver.observe(counter));
+  </script>
 </body>
 </html>
