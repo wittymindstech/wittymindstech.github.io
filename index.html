@@ -3,21 +3,22 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>WittyMinds Technologies | AI, Software & Cloud Solutions</title>
-  <meta name="description" content="WittyMinds Technologies helps businesses grow with AI automation, app development, cloud solutions, cybersecurity and digital marketing." />
+  <title>WittyMinds Technologies | Top Instructor GenAI & AI Courses, Internships & IT Solutions</title>
+  <meta name="description" content="Top instructor-based GenAI & AI courses for your dream job. Real team internships, JobSeekers & Recruiter Connect Program, and AI, cloud & software solutions from WittyMinds Technologies." />
+  <meta name="keywords" content="GenAI courses, AI courses, instructor led AI training, agentic AI, job oriented AI course, WittyMinds internships, recruiter connect program, IT solutions Pune, AI career training India" />
   <link rel="canonical" href="https://wittymindstech.github.io/" />
   <meta property="og:site_name" content="WittyMinds Technologies" />
   <meta property="og:type" content="website" />
-  <meta property="og:title" content="WittyMinds Technologies | AI, Software & Cloud Solutions" />
-  <meta property="og:description" content="AI automation, app & web development, cloud & cybersecurity, GenAI services and career courses." />
+  <meta property="og:title" content="Top Instructor GenAI & AI Courses for Your Dream Job | WittyMinds Technologies" />
+  <meta property="og:description" content="Instructor-led GenAI & AI courses, real team internships, JobSeekers & Recruiter Connect Program, plus AI automation, cloud & software services." />
   <meta property="og:image" content="https://wittymindstech.github.io/assets/images/genai.jpg" />
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="WittyMinds Technologies | AI, Software & Cloud Solutions" />
-  <meta name="twitter:description" content="AI automation, app & web development, cloud & cybersecurity, GenAI services and career courses." />
+  <meta name="twitter:title" content="Top Instructor GenAI & AI Courses for Your Dream Job | WittyMinds Technologies" />
+  <meta name="twitter:description" content="Instructor-led GenAI & AI courses, real team internships, JobSeekers & Recruiter Connect Program, plus AI automation, cloud & software services." />
   <meta name="twitter:image" content="https://wittymindstech.github.io/assets/images/genai.jpg" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
   <script type="application/ld+json">
   {
@@ -29,7 +30,9 @@
     "sameAs": [],
     "description": "WittyMinds Technologies provides AI automation, app & web development, cloud and cybersecurity services, GenAI content, and career training.",
     "hasPart": [
-      { "@type": "Service", "name": "GenAI Career Course" },
+      { "@type": "Course", "name": "Top Instructor Based GenAI & AI Courses", "description": "Instructor-led GenAI and AI courses for your dream job with live mentorship and real projects.", "provider": { "@type": "Organization", "name": "WittyMinds Technologies" }, "url": "https://wittymindstech.github.io/genai-course.html" },
+      { "@type": "Service", "name": "JobSeekers and Recruiter Connect Program", "description": "Training on GenAI, Agentic AI, cloud, full stack, resume building, and recruiter connections." },
+      { "@type": "Service", "name": "WittyMinds Tech Internships", "description": "Get real team job experience with hands-on project work." },
       { "@type": "Service", "name": "GenAI Based Short Films" },
       { "@type": "Service", "name": "GenAI Based Advertisements" },
       { "@type": "Service", "name": "Agentic AI Software" }
@@ -56,7 +59,7 @@
     html { scroll-behavior: smooth; }
     body {
       margin: 0;
-      font-family: 'Inter', sans-serif;
+      font-family: 'Plus Jakarta Sans', 'Inter', sans-serif;
       background: linear-gradient(135deg, #050816 0%, #0c1530 35%, #121b3d 100%);
       color: var(--text);
       line-height: 1.6;
@@ -87,6 +90,11 @@
     img { max-width: 100%; display: block; }
     .container { width: min(1180px, calc(100% - 32px)); margin: 0 auto; }
     .section { padding: 90px 0; }
+    .section-alt {
+      background: linear-gradient(180deg, rgba(15,27,44,0.92) 0%, rgba(8,18,36,0.96) 100%);
+      border-top: 1px solid rgba(255,255,255,0.06);
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+    }
     .eyebrow {
       display: inline-flex;
       align-items: center;
@@ -284,7 +292,8 @@
       border-radius: 22px;
       padding: 22px;
       box-shadow: var(--shadow);
-      transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+      transition: transform 0.35s cubic-bezier(0.22, 1, 0.36, 1), border-color 0.35s ease, box-shadow 0.35s ease;
+      overflow: hidden;
     }
     .service-card.featured {
       border-color: rgba(45,212,191,0.38);
@@ -305,13 +314,38 @@
       text-transform: uppercase;
       letter-spacing: 0.05em;
     }
-    .service-card:hover, .feature-card:hover, .testimonial-card:hover { transform: translateY(-4px); border-color: rgba(47,107,255,0.35); }
-    .service-card img {
-      height: 180px;
-      width: 100%;
-      object-fit: cover;
+    .service-card:hover, .feature-card:hover, .testimonial-card:hover {
+      transform: translateY(-6px);
+      border-color: rgba(47,107,255,0.42);
+      box-shadow: 0 24px 48px rgba(47,107,255,0.18);
+    }
+    .card-media {
+      position: relative;
+      overflow: hidden;
       border-radius: 16px;
       margin-bottom: 16px;
+      height: 180px;
+      background: rgba(0,0,0,0.2);
+    }
+    .card-media::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, transparent 55%, rgba(7,17,31,0.55) 100%);
+      pointer-events: none;
+      opacity: 0.85;
+      transition: opacity 0.35s ease;
+    }
+    .zoom-card:hover .card-media::after { opacity: 0.65; }
+    .card-media img,
+    .card-media video {
+      height: 100%;
+      width: 100%;
+      object-fit: cover;
+      display: block;
+      transform: scale(1) translate(0, 0);
+      transition: transform 0.45s cubic-bezier(0.22, 1, 0.36, 1);
+      will-change: transform;
     }
     .service-card h3 { margin: 0 0 8px; font-size: 1.1rem; }
     .service-card p { margin: 0 0 14px; color: var(--muted); font-size: 0.95rem; }
@@ -336,15 +370,23 @@
       border: 1px solid var(--border);
       background: rgba(255,255,255,0.05);
       box-shadow: var(--shadow);
-      transition: transform 0.25s ease, border-color 0.25s ease;
+      transition: transform 0.35s cubic-bezier(0.22, 1, 0.36, 1), border-color 0.35s ease, box-shadow 0.35s ease;
     }
-    .video-card:hover { transform: translateY(-4px); border-color: rgba(47,107,255,0.35); }
-    .video-card img,
-    .video-card video {
+    .video-card:hover {
+      transform: translateY(-6px);
+      border-color: rgba(47,107,255,0.42);
+      box-shadow: 0 24px 48px rgba(47,107,255,0.18);
+    }
+    .video-card .card-media {
+      height: auto;
+      margin-bottom: 0;
+      border-radius: 0;
+    }
+    .video-card .card-media img,
+    .video-card .card-media video {
       width: 100%;
       aspect-ratio: 16 / 9;
-      object-fit: cover;
-      display: block;
+      height: auto;
     }
     .video-title {
       padding: 12px 14px 14px;
@@ -353,6 +395,176 @@
       font-size: 0.95rem;
       line-height: 1.4;
     }
+
+    .program-layout {
+      display: grid;
+      grid-template-columns: 1fr 1.05fr;
+      gap: 28px;
+      align-items: center;
+    }
+    .program-media {
+      border-radius: 24px;
+      overflow: hidden;
+      border: 1px solid var(--border);
+      box-shadow: var(--shadow);
+      background: rgba(255,255,255,0.04);
+    }
+    .program-media .card-media {
+      height: auto;
+      margin-bottom: 0;
+      border-radius: 0;
+    }
+    .program-media .card-media video {
+      width: 100%;
+      aspect-ratio: 16 / 9;
+      object-fit: cover;
+      display: block;
+      height: auto;
+    }
+    .program-content h2 { margin: 0 0 12px; font-size: clamp(1.6rem, 2.8vw, 2.2rem); }
+    .program-content p { color: var(--muted); margin: 0 0 18px; }
+    .service-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin: 0 0 22px;
+      padding: 0;
+      list-style: none;
+    }
+    .service-tags li {
+      padding: 10px 14px;
+      border-radius: 999px;
+      background: rgba(47,107,255,0.12);
+      border: 1px solid rgba(47,107,255,0.22);
+      color: #dce7ff;
+      font-size: 0.92rem;
+      font-weight: 600;
+    }
+    .program-actions { display: flex; flex-wrap: wrap; gap: 12px; align-items: center; }
+
+    .enrollment-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 12px 16px;
+      border-radius: 999px;
+      background: rgba(16,185,129,0.12);
+      border: 1px solid rgba(16,185,129,0.28);
+      color: #b8f5df;
+      font-size: 0.92rem;
+      font-weight: 600;
+      box-shadow: 0 8px 24px rgba(16,185,129,0.12);
+    }
+    .enrollment-badge strong {
+      color: #fff;
+      font-size: 1.05rem;
+      min-width: 2.5ch;
+      display: inline-block;
+      text-align: center;
+      transition: transform 0.3s ease, color 0.3s ease;
+    }
+    .enrollment-badge strong.tick {
+      transform: scale(1.18);
+      color: #6ee7b7;
+    }
+    .pulse-dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: #10b981;
+      box-shadow: 0 0 0 0 rgba(16,185,129,0.55);
+      animation: pulseDot 1.8s ease-in-out infinite;
+      flex-shrink: 0;
+    }
+    @keyframes pulseDot {
+      0%, 100% { box-shadow: 0 0 0 0 rgba(16,185,129,0.55); }
+      50% { box-shadow: 0 0 0 8px rgba(16,185,129,0); }
+    }
+
+    .internship-banner {
+      display: grid;
+      grid-template-columns: 1.2fr auto;
+      gap: 24px;
+      align-items: center;
+      padding: 32px;
+      border-radius: 28px;
+      background: linear-gradient(120deg, rgba(47,107,255,0.22), rgba(124,77,255,0.18), rgba(45,212,191,0.14));
+      border: 1px solid rgba(255,255,255,0.14);
+      box-shadow: var(--shadow);
+    }
+    .internship-banner h2 { margin: 0 0 10px; font-size: clamp(1.5rem, 2.6vw, 2rem); }
+    .internship-banner p { margin: 0; color: var(--muted); max-width: 720px; }
+
+    .partners-grid {
+      display: grid;
+      grid-template-columns: repeat(5, minmax(0, 1fr));
+      gap: 18px;
+    }
+    .partner-card {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      min-height: 130px;
+      padding: 22px 16px;
+      border-radius: 20px;
+      background: rgba(255,255,255,0.05);
+      border: 1px solid var(--border);
+      text-align: center;
+      transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+    }
+    .partner-card:hover {
+      transform: translateY(-6px) scale(1.02);
+      border-color: rgba(47,107,255,0.42);
+      box-shadow: 0 20px 40px rgba(47,107,255,0.18);
+    }
+    .partner-card:hover .icon {
+      transform: scale(1.08);
+    }
+    .partner-card .icon {
+      width: 52px;
+      height: 52px;
+      border-radius: 14px;
+      display: grid;
+      place-items: center;
+      background: linear-gradient(135deg, rgba(47,107,255,0.28), rgba(124,77,255,0.24));
+      color: #fff;
+      font-size: 1.25rem;
+      transition: transform 0.35s cubic-bezier(0.22, 1, 0.36, 1);
+    }
+    .partner-card strong { font-size: 0.98rem; line-height: 1.35; color: #fff; }
+    .partner-card span { color: var(--muted); font-size: 0.85rem; }
+
+    .pricing-wrap {
+      display: flex;
+      justify-content: center;
+    }
+    .pricing-card {
+      width: min(420px, 100%);
+      padding: 32px 28px;
+      border-radius: 28px;
+      text-align: center;
+      background: linear-gradient(160deg, rgba(47,107,255,0.18), rgba(255,255,255,0.06));
+      border: 1px solid rgba(45,212,191,0.32);
+      box-shadow: 0 22px 50px rgba(45,212,191,0.12);
+    }
+    .pricing-card .price {
+      font-size: clamp(2.4rem, 4vw, 3rem);
+      font-weight: 800;
+      margin: 8px 0 6px;
+      background: linear-gradient(90deg, #ffffff, #9cf1e7);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    .pricing-card .price-note { color: var(--muted); margin-bottom: 20px; font-size: 0.95rem; }
+    .btn-pay {
+      background: linear-gradient(90deg, #10b981, #059669);
+      color: #fff;
+      box-shadow: 0 12px 30px rgba(16,185,129,0.32);
+    }
+    .btn-pay:hover { box-shadow: 0 16px 36px rgba(16,185,129,0.42); }
 
     .contact-wrap {
       display: grid;
@@ -508,11 +720,14 @@
     }
 
     @media (max-width: 900px) {
-      .hero-grid, .contact-wrap { grid-template-columns: 1fr; }
+      .hero-grid, .contact-wrap, .program-layout { grid-template-columns: 1fr; }
       .card-grid { grid-template-columns: 1fr 1fr; }
       .stats-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
       .steps { grid-template-columns: 1fr; }
       .footer-grid { grid-template-columns: 1fr; }
+      .partners-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .internship-banner { grid-template-columns: 1fr; }
+      .video-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
     }
 
     @media (max-width: 720px) {
@@ -536,6 +751,9 @@
       .hero-highlights { grid-template-columns: 1fr; }
       .section-head { flex-direction: column; align-items: start; }
       .bottom-bar { flex-direction: column; }
+      .video-grid { grid-template-columns: 1fr; }
+      .program-actions { flex-direction: column; align-items: stretch; }
+      .enrollment-badge { justify-content: center; text-align: center; }
     }
   </style>
 </head>
@@ -546,9 +764,10 @@
       <button class="menu-toggle" aria-label="Toggle menu"><i class="fa-solid fa-bars"></i></button>
       <nav class="nav-links" id="nav-links">
         <a href="#home" class="active">Home</a>
+        <a href="#genai-course-highlight">GenAI Courses</a>
+        <a href="#careers">Careers</a>
         <a href="#services">Services</a>
-        <a href="#solutions">Solutions</a>
-        <a href="#about">About</a>
+        <a href="#partners">Partners</a>
         <a href="#contact">Contact</a>
       </nav>
     </div>
@@ -609,8 +828,8 @@
       <div class="container">
         <div class="promo-banner">
           <div>
-            <h3>Book A Job Oriented Course with US on GenAI</h3>
-            <p>Kickstart your career with practical GenAI training, real-world projects, and placement-focused guidance.</p>
+            <h3>Top instructor-based GenAI & AI courses for your dream job</h3>
+            <p>Live mentorship, portfolio projects, and job-focused training in GenAI, Agentic AI, and modern AI tools.</p>
           </div>
           <button class="btn btn-primary open-enroll-modal" type="button" data-service="GenAI Course"><i class="fa-solid fa-graduation-cap"></i> Enroll Now</button>
         </div>
@@ -620,20 +839,92 @@
     <section class="section" id="genai-course-highlight">
       <div class="container">
         <div class="hero-card" style="padding: 32px; background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.1);">
-          <div class="eyebrow"><i class="fa-solid fa-graduation-cap"></i> GenAI Career Course</div>
-          <h2>Land your dream AI job with one-on-one next-gen course guidance.</h2>
-          <p>Industry-oriented training, portfolio projects, and flexible mentorship designed for modern AI and automation careers.</p>
-          <div class="grid">
-            <div class="card">
+          <div class="eyebrow"><i class="fa-solid fa-graduation-cap"></i> Top Instructor GenAI & AI Courses</div>
+          <h2>Top instructor-based GenAI & AI courses for your dream job.</h2>
+          <p>Learn from industry mentors with live sessions, portfolio projects, and job-ready skills in GenAI, Agentic AI, prompt engineering, automation, and modern AI tools — built for students, freshers, and career switchers.</p>
+          <div class="card-grid" style="margin-top: 20px; margin-bottom: 20px;">
+            <div class="feature-card">
               <h3>Live mentorship</h3>
               <p>Get direct coaching from experts who understand hiring expectations and AI product workflows.</p>
             </div>
-            <div class="card">
+            <div class="feature-card">
               <h3>Career outcomes</h3>
               <p>Learn with real-world assignments that improve your resume, LinkedIn profile, and interview readiness.</p>
             </div>
+            <div class="feature-card">
+              <h3>Job-focused curriculum</h3>
+              <p>GenAI, Agentic AI, AI tools, automation, and portfolio projects aligned with 2026 hiring trends.</p>
+            </div>
           </div>
-          <a class="btn" href="genai-course.html"><i class="fa-solid fa-arrow-right"></i> View course details</a>
+          <div class="program-actions">
+            <a class="btn btn-primary" href="genai-course.html"><i class="fa-solid fa-arrow-right"></i> View course details</a>
+            <button class="btn btn-secondary open-enroll-modal" type="button" data-service="GenAI Career Course"><i class="fa-solid fa-user-graduate"></i> Enroll now</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-alt" id="careers">
+      <div class="container">
+        <div class="internship-banner" style="margin-bottom: 48px;">
+          <div>
+            <div class="eyebrow"><i class="fa-solid fa-briefcase"></i> Internships</div>
+            <h2>Get real team job experience with wiTTyMinds Tech Internships.</h2>
+            <p>Work alongside our delivery team on live projects, gain practical exposure, and build the experience recruiters look for — not just certificates.</p>
+          </div>
+          <a class="btn btn-primary" href="https://drive.google.com/drive/folders/1rV-ERlhOuz352SmsRcb_EhUeUNkaI-eO?usp=sharing" target="_blank" rel="noopener noreferrer"><i class="fa-solid fa-folder-open"></i> View internship details</a>
+        </div>
+
+        <div class="program-layout">
+          <div class="program-media zoom-card">
+            <div class="card-media">
+              <video autoplay muted loop playsinline preload="metadata" poster="assets/images/genaicourse.jpg" aria-label="JobSeekers and Recruiter Connect Program preview">
+                <source src="assets/images/videos/8061446-uhd_3840_2160_25fps.mp4" type="video/mp4" />
+              </video>
+            </div>
+          </div>
+          <div class="program-content">
+            <div class="eyebrow"><i class="fa-solid fa-handshake"></i> JobSeekers & Recruiter Connect</div>
+            <h2>JobSeekers and Recruiter Connect Program</h2>
+            <p>JobSeekers and Industry Connect Program services designed to move you from learning to interviews — with training, resume support, and recruiter access.</p>
+            <ul class="service-tags">
+              <li>GenAI & Agentic AI</li>
+              <li>Cloud Components</li>
+              <li>Full Stack Development</li>
+              <li>Database & Data Analytics</li>
+              <li>Coding & AI Tools</li>
+              <li>Resume Building</li>
+              <li>Connect to Recruiters</li>
+              <li>Job Funnel</li>
+            </ul>
+            <div class="program-actions">
+              <button class="btn btn-primary open-enroll-modal" type="button" data-service="JobSeekers and Recruiter Connect Program"><i class="fa-solid fa-user-tie"></i> Join the program</button>
+              <div class="enrollment-badge" aria-live="polite">
+                <span class="pulse-dot" aria-hidden="true"></span>
+                <span>Candidates enrolled recently <strong id="enrolledCount">173</strong>+</span>
+              </div>
+              <a class="btn btn-secondary" href="#pricing"><i class="fa-solid fa-indian-rupee-sign"></i> Lifetime access ₹499</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="pricing">
+      <div class="container">
+        <div class="section-head" style="justify-content: center; text-align: center; flex-direction: column; align-items: center;">
+          <div class="eyebrow"><i class="fa-solid fa-tags"></i> Lifetime access</div>
+          <h2>One payment. Full career support.</h2>
+          <p>Unlock JobSeekers and Recruiter Connect Program resources with a single lifetime subscription.</p>
+        </div>
+        <div class="pricing-wrap">
+          <div class="pricing-card">
+            <div class="badge"><i class="fa-solid fa-crown"></i> Best value</div>
+            <h3>Lifetime Subscription</h3>
+            <div class="price">₹499/- Only</div>
+            <p class="price-note">One-time payment • Lifetime access to program resources & updates</p>
+            <a class="btn btn-pay" href="https://rzp.io/rzp/RkBQbeC" target="_blank" rel="noopener noreferrer"><i class="fa-solid fa-credit-card"></i> Pay Now — ₹499</a>
+          </div>
         </div>
       </div>
     </section>
@@ -649,20 +940,20 @@
         </div>
 
         <div class="card-grid">
-          <a class="service-card" href="genai-course.html">
-            <img src="assets/images/genaicourse.jpg?v=2" alt="GenAI career course" />
+          <a class="service-card zoom-card" href="genai-course.html">
+            <div class="card-media"><img src="assets/images/genaicourse.jpg?v=2" alt="GenAI career course" /></div>
             <h3>GenAI Career Course</h3>
-            <p>One-on-one guidance for AI-focused career paths, live mentoring, and industry-aligned projects.</p>
+            <p>Top instructor-based GenAI & AI courses for your dream job — live mentoring and industry-aligned projects.</p>
             <span class="link">Learn more →</span>
           </a>
-          <a class="service-card" href="genai-films.html">
-            <img src="assets/images/aifilms.jpg?v=2" alt="GenAI-based short films" />
+          <a class="service-card zoom-card" href="genai-films.html">
+            <div class="card-media"><img src="assets/images/aifilms.jpg?v=2" alt="GenAI-based short films" /></div>
             <h3>GenAI Based Short Films</h3>
             <p>AI-powered film production with fast scripting, visuals, and storytelling for brand content.</p>
             <span class="link">Learn more →</span>
           </a>
-          <a class="service-card" href="genai-ads.html">
-            <img src="assets/images/aiads.jpg?v=2" alt="GenAI-based advertisements" />
+          <a class="service-card zoom-card" href="genai-ads.html">
+            <div class="card-media"><img src="assets/images/aiads.jpg?v=2" alt="GenAI-based advertisements" /></div>
             <h3>GenAI Based Advertisements</h3>
             <p>Smart ad creative generation for social, video, and digital campaigns — built for speed.</p>
             <span class="link">Learn more →</span>
@@ -682,69 +973,69 @@
         </div>
 
         <div class="card-grid">
-          <a class="service-card featured" href="ai-ml.html">
-            <img src="assets/images/ai-assistant.jpg" alt="Agentic AI software" />
+          <a class="service-card featured zoom-card" href="ai-ml.html">
+            <div class="card-media"><img src="assets/images/ai-assistant.jpg" alt="Agentic AI software" /></div>
             <div class="badge"><i class="fa-solid fa-rocket"></i> Featured</div>
             <h3>Agentic AI Production-Ready Software</h3>
             <p>Launch autonomous AI assistants, copilots, and workflow agents with secure architecture and real-world deployment.</p>
             <span class="link">Explore now →</span>
           </a>
-          <a class="service-card" href="app-development.html">
-            <img src="assets/images/app-dev.jpg" alt="App development" />
+          <a class="service-card zoom-card" href="app-development.html">
+            <div class="card-media"><img src="assets/images/app-dev.jpg" alt="App development" /></div>
             <h3>App Development</h3>
             <p>Native and cross-platform applications to power your products and customer experience.</p>
             <span class="link">Learn more →</span>
           </a>
-          <a class="service-card" href="web-development.html">
-            <img src="assets/images/webdev.jpg" alt="Web development" />
+          <a class="service-card zoom-card" href="web-development.html">
+            <div class="card-media"><img src="assets/images/webdev.jpg" alt="Web development" /></div>
             <h3>Web Development</h3>
             <p>Fast, scalable websites and web apps with modern UX and SEO-friendly structure.</p>
             <span class="link">Learn more →</span>
           </a>
-          <a class="service-card" href="genai-course.html">
-            <img src="assets/images/genaicourse.jpg" alt="GenAI course" />
+          <a class="service-card zoom-card" href="genai-course.html">
+            <div class="card-media"><img src="assets/images/genaicourse.jpg" alt="GenAI course" /></div>
             <h3>GenAI Career Course</h3>
             <p>Job-oriented training for next-gen AI roles with one-on-one mentorship and real industry projects.</p>
             <span class="link">Learn more →</span>
           </a>
-          <a class="service-card" href="ai-ml.html">
-            <img src="assets/images/ai-ml.jpg" alt="AI and machine learning" />
+          <a class="service-card zoom-card" href="ai-ml.html">
+            <div class="card-media"><img src="assets/images/ai-ml.jpg" alt="AI and machine learning" /></div>
             <h3>AI / ML Solutions</h3>
             <p>Automation, prediction, and intelligent assistants that remove manual bottlenecks.</p>
             <span class="link">Learn more →</span>
           </a>
-          <a class="service-card" href="genai-films.html">
-            <img src="assets/images/aifilms.jpg" alt="GenAI-Based short films" />
+          <a class="service-card zoom-card" href="genai-films.html">
+            <div class="card-media"><img src="assets/images/aifilms.jpg" alt="GenAI-Based short films" /></div>
             <h3>GenAI Based Short Films</h3>
             <p>High-impact cinematic storytelling with AI-generated visuals, scripts, and smart editing.</p>
             <span class="link">Explore now →</span>
           </a>
-          <a class="service-card" href="genai-ads.html">
-            <img src="assets/images/aiads.jpg" alt="GenAI-Based advertisements" />
+          <a class="service-card zoom-card" href="genai-ads.html">
+            <div class="card-media"><img src="assets/images/aiads.jpg" alt="GenAI-Based advertisements" /></div>
             <h3>GenAI Based Advertisements</h3>
             <p>Creative ad campaigns produced quickly with generative AI for social, video, and display media.</p>
             <span class="link">Explore now →</span>
           </a>
-          <a class="service-card" href="cloud-computing.html">
-            <img src="assets/images/cloud.jpg" alt="Cloud computing" />
+          <a class="service-card zoom-card" href="cloud-computing.html">
+            <div class="card-media"><img src="assets/images/cloud.jpg" alt="Cloud computing" /></div>
             <h3>Cloud Computing</h3>
             <p>Cloud migration, deployment, and optimization for stable and resilient operations.</p>
             <span class="link">Learn more →</span>
           </a>
-          <a class="service-card" href="cybersecurity.html">
-            <img src="assets/images/security.jpg" alt="Cybersecurity" />
+          <a class="service-card zoom-card" href="cybersecurity.html">
+            <div class="card-media"><img src="assets/images/security.jpg" alt="Cybersecurity" /></div>
             <h3>Cybersecurity</h3>
             <p>Security-first design and protection for your users, applications, and data.</p>
             <span class="link">Learn more →</span>
           </a>
-          <a class="service-card" href="advertisement.html">
-            <img src="assets/images/digital.jpg" alt="Digital marketing and advertisement" />
+          <a class="service-card zoom-card" href="advertisement.html">
+            <div class="card-media"><img src="assets/images/digital.jpg" alt="Digital marketing and advertisement" /></div>
             <h3>Digital Marketing</h3>
             <p>Performance-driven marketing that helps your brand reach the right audience.</p>
             <span class="link">Learn more →</span>
           </a>
-          <a class="service-card" href="real-estate-assets.html">
-            <img src="https://images.pexels.com/photos/17903414/pexels-photo-17903414/free-photo-of-brunette-woman-reading-book-in-bed.jpeg?auto=compress&w=600&h=400&dpr=1" alt="Real estate assets advertisement" />
+          <a class="service-card zoom-card" href="real-estate-assets.html">
+            <div class="card-media"><img src="https://images.pexels.com/photos/17903414/pexels-photo-17903414/free-photo-of-brunette-woman-reading-book-in-bed.jpeg?auto=compress&w=600&h=400&dpr=1" alt="Real estate assets advertisement" /></div>
             <h3>Real Estate Assets Advertisement</h3>
             <p>Premium lifestyle-led advertising for villas, residences, and high-value property campaigns.</p>
             <span class="link">Explore now →</span>
@@ -778,6 +1069,46 @@
             <div class="num">3</div>
             <h3>Scale</h3>
             <p>We support you with monitoring, enhancement, and optimization so your systems stay reliable as you grow.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-alt" id="partners">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <div class="eyebrow"><i class="fa-solid fa-handshake-angle"></i> Our partners</div>
+            <h2>Trusted collaborators across technology, legal, and retail.</h2>
+          </div>
+          <p>We work with forward-thinking partners in Germany, Pune, Surat, and beyond to deliver quality services and career opportunities.</p>
+        </div>
+
+        <div class="partners-grid">
+          <a class="partner-card" href="https://www.thecybergist.com" target="_blank" rel="noopener noreferrer">
+            <div class="icon"><i class="fa-solid fa-shield-halved"></i></div>
+            <strong>The CyberGist</strong>
+            <span>Germany</span>
+          </a>
+          <a class="partner-card" href="https://www.legalandvakil.com" target="_blank" rel="noopener noreferrer">
+            <div class="icon"><i class="fa-solid fa-scale-balanced"></i></div>
+            <strong>Legal And Vakil</strong>
+            <span>Legal services</span>
+          </a>
+          <div class="partner-card">
+            <div class="icon"><i class="fa-solid fa-building"></i></div>
+            <strong>GKTCS</strong>
+            <span>Pune</span>
+          </div>
+          <div class="partner-card">
+            <div class="icon"><i class="fa-solid fa-laptop-code"></i></div>
+            <strong>Arham Infotech</strong>
+            <span>Surat</span>
+          </div>
+          <div class="partner-card">
+            <div class="icon"><i class="fa-solid fa-store"></i></div>
+            <strong>Sheen Valley Store</strong>
+            <span>Retail partner</span>
           </div>
         </div>
       </div>
@@ -821,24 +1152,32 @@
         </div>
 
         <div class="video-grid">
-          <div class="video-card">
-            <video class="video-preview" autoplay muted loop playsinline preload="metadata" poster="assets/images/arvr-team-1.svg">
-              <source src="assets/images/videos/17428642-hd_1920_1080_25fps.mp4" type="video/mp4" />
-            </video>
+          <div class="video-card zoom-card">
+            <div class="card-media">
+              <video class="video-preview" autoplay muted loop playsinline preload="metadata" poster="assets/images/arvr-team-1.svg">
+                <source src="assets/images/videos/17428642-hd_1920_1080_25fps.mp4" type="video/mp4" />
+              </video>
+            </div>
             <div class="video-title">Our AR VR Team</div>
           </div>
-          <div class="video-card">
-            <video class="video-preview" autoplay muted loop playsinline preload="metadata" poster="assets/images/arvr-team-2.svg">
-              <source src="assets/images/videos/17744633-hd_1920_1080_25fps.mp4" type="video/mp4" />
-            </video>
+          <div class="video-card zoom-card">
+            <div class="card-media">
+              <video class="video-preview" autoplay muted loop playsinline preload="metadata" poster="assets/images/arvr-team-2.svg">
+                <source src="assets/images/videos/17744633-hd_1920_1080_25fps.mp4" type="video/mp4" />
+              </video>
+            </div>
             <div class="video-title">Immersive VR Experience</div>
           </div>
-          <a class="video-card" href="https://www.youtube.com/watch?v=6TL1j743I7c" target="_blank" rel="noopener noreferrer">
-            <img src="https://img.youtube.com/vi/6TL1j743I7c/0.jpg" alt="YouTube video thumbnail 3" />
+          <a class="video-card zoom-card" href="https://www.youtube.com/watch?v=6TL1j743I7c" target="_blank" rel="noopener noreferrer">
+            <div class="card-media">
+              <img src="https://img.youtube.com/vi/6TL1j743I7c/0.jpg" alt="YouTube video thumbnail 3" />
+            </div>
             <div class="video-title">Cloud & Security Overview</div>
           </a>
-          <a class="video-card" href="https://www.youtube.com/watch?v=_se7fo1up4Q" target="_blank" rel="noopener noreferrer">
-            <img src="https://img.youtube.com/vi/_se7fo1up4Q/0.jpg" alt="YouTube video thumbnail 4" />
+          <a class="video-card zoom-card" href="https://www.youtube.com/watch?v=_se7fo1up4Q" target="_blank" rel="noopener noreferrer">
+            <div class="card-media">
+              <img src="https://img.youtube.com/vi/_se7fo1up4Q/0.jpg" alt="YouTube video thumbnail 4" />
+            </div>
             <div class="video-title">Digital Growth Showcase</div>
           </a>
         </div>
@@ -885,6 +1224,8 @@
         <a href="web-development.html">Web Development</a><br />
         <a href="ai-ml.html">AI / ML</a><br />
         <a href="genai-course.html">GenAI Career Course</a><br />
+        <a href="#careers">Internships & Job Connect</a><br />
+        <a href="#partners">Our Partners</a><br />
         <a href="genai-films.html">GenAI Short Films</a><br />
         <a href="genai-ads.html">GenAI Advertisements</a><br />
         <a href="products.html">Products</a>
@@ -926,6 +1267,8 @@
         <input type="tel" name="phone" placeholder="Phone Number" />
         <select name="service" id="serviceSelect">
           <option value="GenAI Course">GenAI Course</option>
+          <option value="JobSeekers and Recruiter Connect Program">JobSeekers and Recruiter Connect Program</option>
+          <option value="WittyMinds Tech Internships">WittyMinds Tech Internships</option>
           <option value="Agentic AI Software">Agentic AI Software</option>
           <option value="GenAI Career Course">GenAI Career Course</option>
           <option value="GenAI Based Short Films">GenAI Based Short Films</option>
@@ -1162,6 +1505,44 @@
     }, { threshold: 0.6 });
 
     counters.forEach(counter => counterObserver.observe(counter));
+
+    // Cursor-driven zoom on image/video cards
+    document.querySelectorAll('.zoom-card').forEach(card => {
+      const media = card.querySelector('.card-media img, .card-media video');
+      if (!media) return;
+
+      card.addEventListener('mousemove', (event) => {
+        const rect = card.getBoundingClientRect();
+        const x = (event.clientX - rect.left) / rect.width - 0.5;
+        const y = (event.clientY - rect.top) / rect.height - 0.5;
+        media.style.transition = 'transform 0.15s ease-out';
+        media.style.transform = `scale(1.14) translate(${x * 10}%, ${y * 10}%)`;
+      });
+
+      card.addEventListener('mouseleave', () => {
+        media.style.transition = 'transform 0.45s cubic-bezier(0.22, 1, 0.36, 1)';
+        media.style.transform = 'scale(1) translate(0, 0)';
+      });
+    });
+
+    // Dynamic enrolled candidates counter (starts at 173+)
+    const enrolledEl = document.getElementById('enrolledCount');
+    if (enrolledEl) {
+      let count = 173;
+      const minCount = 168;
+      const maxCount = 192;
+
+      function tickEnrollment() {
+        const delta = Math.random() > 0.35 ? 1 : -1;
+        count = Math.min(maxCount, Math.max(minCount, count + delta));
+        enrolledEl.textContent = String(count);
+        enrolledEl.classList.add('tick');
+        setTimeout(() => enrolledEl.classList.remove('tick'), 320);
+        setTimeout(tickEnrollment, 2800 + Math.random() * 4200);
+      }
+
+      setTimeout(tickEnrollment, 3500);
+    }
   </script>
 </body>
 </html>
