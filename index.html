@@ -35,24 +35,25 @@
       { "@type": "Service", "name": "WittyMinds Tech Internships", "description": "Get real team job experience with hands-on project work." },
       { "@type": "Service", "name": "GenAI Based Short Films" },
       { "@type": "Service", "name": "GenAI Based Advertisements" },
-      { "@type": "Service", "name": "Agentic AI Software" }
+      { "@type": "Service", "name": "Agentic AI Software" },
+      { "@type": "Service", "name": "Automate Your Business using GenAI", "description": "Leverage the power of AI agents to automate business workflows and operations.", "url": "https://wittymindstech.github.io/automation.html" }
     ]
   }
   </script>
   <style>
     :root {
-      --bg: #07111f;
-      --bg-soft: #0f1b2c;
-      --surface: rgba(255,255,255,0.06);
-      --surface-strong: rgba(255,255,255,0.12);
-      --text: #f7f8fc;
-      --muted: #9fb0c9;
-      --accent: #2f6bff;
-      --accent-2: #7c4dff;
-      --accent-3: #2dd4bf;
-      --border: rgba(255,255,255,0.12);
-      --shadow: 0 20px 45px rgba(0,0,0,0.28);
-      --radius: 24px;
+      --bg: #050c22;
+      --bg-soft: #0b1b44;
+      --surface: rgba(12, 29, 72, 0.66);
+      --surface-strong: rgba(19, 41, 93, 0.88);
+      --text: #f2f6ff;
+      --muted: #a8b8dc;
+      --accent: #1f6dff;
+      --accent-2: #10b2f5;
+      --accent-3: #19d3a2;
+      --border: rgba(138, 168, 255, 0.26);
+      --shadow: 0 18px 40px rgba(2, 8, 28, 0.45);
+      --radius: 16px;
     }
 
     * { box-sizing: border-box; }
@@ -60,7 +61,10 @@
     body {
       margin: 0;
       font-family: 'Plus Jakarta Sans', 'Inter', sans-serif;
-      background: linear-gradient(135deg, #050816 0%, #0c1530 35%, #121b3d 100%);
+      background:
+        radial-gradient(circle at 8% 12%, rgba(31, 109, 255, 0.18), transparent 28%),
+        radial-gradient(circle at 92% 10%, rgba(16, 178, 245, 0.16), transparent 26%),
+        linear-gradient(145deg, #030816 0%, #071431 46%, #091c46 100%);
       color: var(--text);
       line-height: 1.6;
       position: relative;
@@ -100,10 +104,10 @@
       align-items: center;
       gap: 8px;
       padding: 8px 14px;
-      border-radius: 999px;
-      background: rgba(47,107,255,0.14);
-      border: 1px solid rgba(47,107,255,0.2);
-      color: #8bb8ff;
+      border-radius: 8px;
+      background: rgba(31,109,255,0.18);
+      border: 1px solid rgba(16,178,245,0.3);
+      color: #9cc9ff;
       font-size: 0.9rem;
       margin-bottom: 18px;
       font-weight: 600;
@@ -116,15 +120,15 @@
       justify-content: center;
       gap: 10px;
       padding: 14px 24px;
-      border-radius: 999px;
+      border-radius: 10px;
       font-weight: 700;
       transition: transform 0.25s ease, box-shadow 0.25s ease, background 0.25s ease;
     }
     .btn:hover { transform: translateY(-2px); }
     .btn-primary {
       color: white;
-      background: linear-gradient(90deg, #3b82f6 0%, #7c3aed 45%, #f43f5e 100%);
-      box-shadow: 0 12px 35px rgba(124,58,237,0.35);
+      background: linear-gradient(90deg, var(--accent) 0%, var(--accent-2) 100%);
+      box-shadow: 0 10px 28px rgba(31,109,255,0.38);
     }
     .btn-secondary {
       color: var(--text);
@@ -137,8 +141,8 @@
       top: 0;
       z-index: 1000;
       backdrop-filter: blur(14px);
-      background: rgba(7,17,31,0.9);
-      border-bottom: 1px solid rgba(255,255,255,0.08);
+      background: rgba(5, 14, 38, 0.94);
+      border-bottom: 1px solid rgba(138,168,255,0.2);
     }
     .topbar, .hero, .section, footer {
       position: relative;
@@ -154,8 +158,7 @@
     .brand {
       font-size: 1.15rem;
       font-weight: 800;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
+      letter-spacing: 0.04em;
       color: #fff;
     }
     .brand span { color: var(--accent-3); }
@@ -201,11 +204,11 @@
       line-height: 1.05;
       margin: 0 0 18px;
       font-weight: 800;
-      background: linear-gradient(90deg, #ffffff 0%, #9edbff 35%, #ffd166 70%, #ff5f7d 100%);
+      background: linear-gradient(90deg, #ffffff 0%, #d2e3ff 45%, #88dfff 100%);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       background-clip: text;
-      text-shadow: 0 0 28px rgba(126, 169, 255, 0.16);
+      text-shadow: 0 0 26px rgba(93, 154, 255, 0.2);
     }
     .hero p { font-size: 1.05rem; color: var(--muted); max-width: 650px; margin: 0 0 26px; }
     .hero-actions { display: flex; flex-wrap: wrap; gap: 12px; margin-bottom: 24px; }
@@ -224,8 +227,8 @@
     .hero-highlights .item strong { display: block; font-size: 1.1rem; margin-bottom: 4px; }
     .hero-highlights .item span { color: var(--muted); font-size: 0.92rem; }
     .hero-card {
-      background: linear-gradient(145deg, rgba(255,255,255,0.18), rgba(255,255,255,0.06));
-      border: 1px solid rgba(255,255,255,0.16);
+      background: linear-gradient(145deg, rgba(21,44,95,0.84), rgba(8,23,58,0.88));
+      border: 1px solid var(--border);
       border-radius: var(--radius);
       padding: 24px;
       box-shadow: var(--shadow);
@@ -244,9 +247,9 @@
     .promo-banner {
       margin: 24px 0 0;
       padding: 24px 28px;
-      border-radius: 24px;
-      background: linear-gradient(90deg, rgba(59,130,246,0.24), rgba(255, 107, 53, 0.2), rgba(45,212,191,0.18));
-      border: 1px solid rgba(255,255,255,0.16);
+      border-radius: 16px;
+      background: linear-gradient(90deg, rgba(31,109,255,0.28), rgba(16,178,245,0.2));
+      border: 1px solid var(--border);
       display: flex;
       justify-content: space-between;
       align-items: center;
@@ -287,9 +290,9 @@
       gap: 20px;
     }
     .service-card, .feature-card, .testimonial-card, .contact-card {
-      background: rgba(255,255,255,0.05);
+      background: linear-gradient(165deg, rgba(18,39,84,0.78), rgba(8,21,55,0.84));
       border: 1px solid var(--border);
-      border-radius: 22px;
+      border-radius: 16px;
       padding: 22px;
       box-shadow: var(--shadow);
       transition: transform 0.35s cubic-bezier(0.22, 1, 0.36, 1), border-color 0.35s ease, box-shadow 0.35s ease;
@@ -352,7 +355,7 @@
     .service-card .link { color: #8bb8ff; font-weight: 700; }
 
     .steps { display: grid; grid-template-columns: repeat(3, minmax(0,1fr)); gap: 18px; }
-    .step { padding: 22px; background: rgba(255,255,255,0.04); border: 1px solid var(--border); border-radius: 20px; }
+    .step { padding: 22px; background: linear-gradient(165deg, rgba(17,36,82,0.7), rgba(8,21,55,0.82)); border: 1px solid var(--border); border-radius: 14px; }
     .step .num { display: inline-grid; place-items: center; width: 42px; height: 42px; border-radius: 50%; background: linear-gradient(90deg, var(--accent), var(--accent-2)); font-weight: 700; margin-bottom: 12px; }
     .step h3 { margin: 0 0 8px; }
     .step p { margin: 0; color: var(--muted); }
@@ -538,7 +541,9 @@
 
     .pricing-wrap {
       display: flex;
+      flex-wrap: wrap;
       justify-content: center;
+      gap: 24px;
     }
     .pricing-card {
       width: min(420px, 100%);
@@ -549,6 +554,27 @@
       border: 1px solid rgba(45,212,191,0.32);
       box-shadow: 0 22px 50px rgba(45,212,191,0.12);
     }
+    .pricing-card.alt {
+      background: linear-gradient(160deg, rgba(168,85,247,0.20), rgba(255,255,255,0.06));
+      border: 1px solid rgba(249,115,22,0.35);
+      box-shadow: 0 22px 50px rgba(249,115,22,0.14);
+    }
+    .pricing-card.alt .badge {
+      background: rgba(249,115,22,0.18);
+      color: #ffd9a8;
+    }
+    .pricing-card.alt .price {
+      background: linear-gradient(90deg, #ffffff, #ffd9a8);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    .btn-pay-alt {
+      background: linear-gradient(90deg, #f97316, #a855f7);
+      color: #fff;
+      box-shadow: 0 12px 30px rgba(249,115,22,0.32);
+    }
+    .btn-pay-alt:hover { box-shadow: 0 16px 36px rgba(249,115,22,0.42); }
     .pricing-card .price {
       font-size: clamp(2.4rem, 4vw, 3rem);
       font-weight: 800;
@@ -760,7 +786,7 @@
 <body>
   <header class="topbar">
     <div class="container navbar">
-      <a href="#home" class="brand">Witty<span>Minds</span></a>
+      <a href="#home" class="brand">wiTTyMinds<span> Technologies</span></a>
       <button class="menu-toggle" aria-label="Toggle menu"><i class="fa-solid fa-bars"></i></button>
       <nav class="nav-links" id="nav-links">
         <a href="#home" class="active">Home</a>
@@ -907,6 +933,36 @@
             </div>
           </div>
         </div>
+
+        <div class="program-layout" style="margin-top: 56px;">
+          <div class="program-media zoom-card">
+            <div class="card-media">
+              <video autoplay muted loop playsinline preload="metadata" poster="assets/images/remote-work-flex.JPG" aria-label="Remote Work Exclusive Program preview">
+                <source src="assets/images/videos/remote-work.mp4" type="video/mp4" />
+              </video>
+            </div>
+          </div>
+          <div class="program-content">
+            <div class="eyebrow"><i class="fa-solid fa-house-laptop"></i> Remote Work Exclusive</div>
+            <h2>Remote Work Exclusive Program</h2>
+            <p>Get matched with genuine remote and work-from-home opportunities — global clients, flexible hours, and a curated path from training to placement.</p>
+            <ul class="service-tags">
+              <li>Remote Job Placement</li>
+              <li>Global Client Access</li>
+              <li>Flexible Work Hours</li>
+              <li>Work-From-Home Setup Guidance</li>
+              <li>Freelance & Full-time Tracks</li>
+              <li>Skill Certification</li>
+              <li>Interview Preparation</li>
+              <li>Direct Recruiter Access</li>
+            </ul>
+            <div class="program-actions">
+              <button class="btn btn-primary open-enroll-modal" type="button" data-service="Remote Work Exclusive Program"><i class="fa-solid fa-house-laptop"></i> Join the program</button>
+              <a class="btn btn-secondary" href="remote-work.html"><i class="fa-solid fa-arrow-right"></i> Learn more</a>
+              <a class="btn btn-secondary" href="#pricing"><i class="fa-solid fa-indian-rupee-sign"></i> Lifetime access ₹999</a>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
 
@@ -922,8 +978,15 @@
             <div class="badge"><i class="fa-solid fa-crown"></i> Best value</div>
             <h3>Lifetime Subscription</h3>
             <div class="price">₹499/- Only</div>
-            <p class="price-note">One-time payment • Lifetime access to program resources & updates</p>
+            <p class="price-note">One-time payment • Lifetime access to JobSeekers & Recruiter Connect resources & updates</p>
             <a class="btn btn-pay" href="https://rzp.io/rzp/RkBQbeC" target="_blank" rel="noopener noreferrer"><i class="fa-solid fa-credit-card"></i> Pay Now — ₹499</a>
+          </div>
+          <div class="pricing-card alt">
+            <div class="badge"><i class="fa-solid fa-house-laptop"></i> Remote Work Exclusive</div>
+            <h3>Remote Work Exclusive Program</h3>
+            <div class="price">₹999/- Only</div>
+            <p class="price-note">One-time payment • Lifetime access to remote job placement resources & updates</p>
+            <a class="btn btn-pay-alt" href="https://rzp.io/rzp/rJ7oDqCC" target="_blank" rel="noopener noreferrer"><i class="fa-solid fa-credit-card"></i> Pay Now — ₹999</a>
           </div>
         </div>
       </div>
@@ -947,7 +1010,7 @@
             <span class="link">Learn more →</span>
           </a>
           <a class="service-card zoom-card" href="genai-films.html">
-            <div class="card-media"><img src="assets/images/aifilms.jpg?v=2" alt="GenAI-based short films" /></div>
+            <div class="card-media"><img src="assets/images/ai_films.jpg?v=2" alt="GenAI-based short films" /></div>
             <h3>GenAI Based Short Films</h3>
             <p>AI-powered film production with fast scripting, visuals, and storytelling for brand content.</p>
             <span class="link">Learn more →</span>
@@ -956,6 +1019,12 @@
             <div class="card-media"><img src="assets/images/aiads.jpg?v=2" alt="GenAI-based advertisements" /></div>
             <h3>GenAI Based Advertisements</h3>
             <p>Smart ad creative generation for social, video, and digital campaigns — built for speed.</p>
+            <span class="link">Learn more →</span>
+          </a>
+          <a class="service-card zoom-card" href="automation.html">
+            <div class="card-media"><img src="assets/images/business-automate.jpg" alt="Automate your business using GenAI" style="object-position: center 30%;" /></div>
+            <h3>Automate Your Business using GenAI</h3>
+            <p>Leverage the power of AI agents to automate workflows, reduce manual effort, and scale operations.</p>
             <span class="link">Learn more →</span>
           </a>
         </div>
@@ -1005,7 +1074,7 @@
             <span class="link">Learn more →</span>
           </a>
           <a class="service-card zoom-card" href="genai-films.html">
-            <div class="card-media"><img src="assets/images/aifilms.jpg" alt="GenAI-Based short films" /></div>
+            <div class="card-media"><img src="assets/images/ai_films.jpg" alt="GenAI-Based short films" /></div>
             <h3>GenAI Based Short Films</h3>
             <p>High-impact cinematic storytelling with AI-generated visuals, scripts, and smart editing.</p>
             <span class="link">Explore now →</span>
@@ -1014,6 +1083,12 @@
             <div class="card-media"><img src="assets/images/aiads.jpg" alt="GenAI-Based advertisements" /></div>
             <h3>GenAI Based Advertisements</h3>
             <p>Creative ad campaigns produced quickly with generative AI for social, video, and display media.</p>
+            <span class="link">Explore now →</span>
+          </a>
+          <a class="service-card zoom-card" href="automation.html">
+            <div class="card-media"><img src="assets/images/business-automate.jpg" alt="Automate your business using GenAI" style="object-position: center 30%;" /></div>
+            <h3>Automate Your Business using GenAI</h3>
+            <p>Leverage the power of AI agents to automate workflows, reduce manual effort, and scale operations.</p>
             <span class="link">Explore now →</span>
           </a>
           <a class="service-card zoom-card" href="cloud-computing.html">
@@ -1225,6 +1300,7 @@
         <a href="ai-ml.html">AI / ML</a><br />
         <a href="genai-course.html">GenAI Career Course</a><br />
         <a href="#careers">Internships & Job Connect</a><br />
+        <a href="remote-work.html">Remote Work Exclusive Program</a><br />
         <a href="#partners">Our Partners</a><br />
         <a href="genai-films.html">GenAI Short Films</a><br />
         <a href="genai-ads.html">GenAI Advertisements</a><br />
@@ -1268,8 +1344,10 @@
         <select name="service" id="serviceSelect">
           <option value="GenAI Course">GenAI Course</option>
           <option value="JobSeekers and Recruiter Connect Program">JobSeekers and Recruiter Connect Program</option>
+          <option value="Remote Work Exclusive Program">Remote Work Exclusive Program</option>
           <option value="WittyMinds Tech Internships">WittyMinds Tech Internships</option>
           <option value="Agentic AI Software">Agentic AI Software</option>
+          <option value="Automate Your Business using GenAI">Automate Your Business using GenAI</option>
           <option value="GenAI Career Course">GenAI Career Course</option>
           <option value="GenAI Based Short Films">GenAI Based Short Films</option>
           <option value="GenAI Based Advertisements">GenAI Based Advertisements</option>
