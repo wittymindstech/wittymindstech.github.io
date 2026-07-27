@@ -238,6 +238,256 @@
     .hero-card ul { padding-left: 18px; color: var(--muted); }
     .hero-card li { margin-bottom: 8px; }
 
+    /* Home showcase slider */
+    .wm-slider {
+      position: relative;
+      border-radius: var(--radius);
+      overflow: hidden;
+      border: 1px solid var(--border);
+      box-shadow: var(--shadow);
+      height: clamp(340px, 46vw, 540px);
+      background: #030816;
+    }
+    .wm-slider-track {
+      display: flex;
+      height: 100%;
+      transition: transform 0.75s cubic-bezier(0.22, 1, 0.36, 1);
+      will-change: transform;
+    }
+    .wm-slide {
+      position: relative;
+      flex: 0 0 100%;
+      height: 100%;
+      background-size: cover;
+      background-position: center;
+    }
+    .wm-slide-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(100deg, rgba(3,8,22,0.94) 0%, rgba(5,12,34,0.72) 42%, rgba(5,12,34,0.28) 78%);
+    }
+    .wm-slide-content {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: 14px;
+      padding: 32px clamp(24px, 6vw, 64px);
+      max-width: 640px;
+    }
+    .wm-slide-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      width: fit-content;
+      padding: 7px 14px;
+      border-radius: 999px;
+      background: rgba(31,109,255,0.22);
+      border: 1px solid rgba(16,178,245,0.35);
+      color: #9cc9ff;
+      font-size: 0.82rem;
+      font-weight: 700;
+      letter-spacing: 0.03em;
+      text-transform: uppercase;
+    }
+    .wm-slide-content h3 {
+      margin: 0;
+      font-size: clamp(1.4rem, 2.6vw, 2.2rem);
+      font-weight: 800;
+      line-height: 1.15;
+      color: #fff;
+    }
+    .wm-slide-content p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 1rem;
+      max-width: 520px;
+    }
+    .wm-slide-content .btn { width: fit-content; margin-top: 6px; }
+    .wm-slider-arrow {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      background: rgba(8,18,36,0.55);
+      border: 1px solid var(--border);
+      color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      z-index: 3;
+      backdrop-filter: blur(8px);
+      transition: background 0.25s ease, transform 0.25s ease, border-color 0.25s ease;
+    }
+    .wm-slider-arrow:hover { background: rgba(31,109,255,0.55); border-color: rgba(16,178,245,0.5); }
+    .wm-slider-arrow.prev { left: 16px; }
+    .wm-slider-arrow.next { right: 16px; }
+    .wm-slider-dots {
+      position: absolute;
+      bottom: 18px;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      gap: 8px;
+      z-index: 3;
+    }
+    .wm-dot {
+      width: 9px;
+      height: 9px;
+      padding: 0;
+      border-radius: 50%;
+      border: none;
+      background: rgba(255,255,255,0.35);
+      cursor: pointer;
+      transition: background 0.25s ease, width 0.25s ease, border-radius 0.25s ease;
+    }
+    .wm-dot.active { background: #fff; width: 26px; border-radius: 6px; }
+    @media (max-width: 640px) {
+      .wm-slider-arrow { width: 36px; height: 36px; }
+      .wm-slide-content { padding: 24px; }
+      .wm-slide-content p { display: none; }
+    }
+
+    /* Product demo showcase */
+    #product-demo .container {
+      width: 100vw;
+      max-width: none;
+      margin-left: calc(50% - 50vw);
+      margin-right: calc(50% - 50vw);
+      padding: 0 clamp(12px, 2vw, 26px);
+    }
+    .demo-showcase { display: flex; justify-content: center; }
+    .demo-frame-wrap {
+      position: relative;
+      width: 100%;
+      max-width: none;
+    }
+    .demo-frame-wrap::before {
+      content: '';
+      position: absolute;
+      inset: -30px;
+      background: radial-gradient(circle, rgba(31,109,255,0.35), transparent 70%);
+      filter: blur(50px);
+      z-index: 0;
+    }
+    .demo-frame {
+      position: relative;
+      z-index: 1;
+      border-radius: clamp(14px, 1.8vw, 24px);
+      overflow: hidden;
+      border: 1px solid var(--border);
+      box-shadow: var(--shadow);
+      background: #0b1220;
+      animation: demoFrameFloat 8s ease-in-out infinite;
+    }
+    .demo-frame::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(120deg, transparent 0%, rgba(255,255,255,0.08) 46%, transparent 60%);
+      transform: translateX(-130%);
+      pointer-events: none;
+      animation: demoShine 9s ease-in-out infinite;
+      z-index: 2;
+    }
+    @keyframes demoFrameFloat {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-7px); }
+    }
+    @keyframes demoShine {
+      0%, 78%, 100% { transform: translateX(-130%); }
+      88% { transform: translateX(130%); }
+    }
+    .demo-frame-bar {
+      display: flex;
+      align-items: center;
+      gap: 7px;
+      padding: 12px 16px;
+      background: rgba(255,255,255,0.04);
+      border-bottom: 1px solid var(--border);
+    }
+    .demo-dot { width: 11px; height: 11px; border-radius: 50%; }
+    .demo-dot.red { background: #ff5f57; }
+    .demo-dot.yellow { background: #febc2e; }
+    .demo-dot.green { background: #28c840; }
+    .demo-url {
+      margin-left: 10px;
+      font-size: 0.82rem;
+      color: var(--muted);
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .demo-live {
+      margin-left: auto;
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+      color: #ff8a8a;
+    }
+    .demo-live-pulse {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: #ff5f57;
+      box-shadow: 0 0 0 rgba(255,95,87,0.6);
+      animation: demoPulse 1.6s ease-out infinite;
+    }
+    @keyframes demoPulse {
+      0% { box-shadow: 0 0 0 0 rgba(255,95,87,0.55); }
+      70% { box-shadow: 0 0 0 9px rgba(255,95,87,0); }
+      100% { box-shadow: 0 0 0 0 rgba(255,95,87,0); }
+    }
+    .demo-frame-body {
+      position: relative;
+      width: 100%;
+      aspect-ratio: 21 / 9;
+      background: #000;
+      overflow: hidden;
+    }
+    .demo-slider-track {
+      display: flex;
+      height: 100%;
+      transition: transform 0.75s cubic-bezier(0.22, 1, 0.36, 1);
+      will-change: transform;
+    }
+    .demo-slide {
+      position: relative;
+      flex: 0 0 100%;
+      height: 100%;
+      overflow: hidden;
+    }
+    .demo-slide video,
+    .demo-slide img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transform: scale(1.16);
+      opacity: 0;
+      filter: saturate(1.08) contrast(1.05);
+      transition: transform 7s cubic-bezier(0.22, 1, 0.36, 1), opacity 0.7s ease;
+    }
+    .demo-slide.active video,
+    .demo-slide.active img {
+      transform: scale(1);
+      opacity: 1;
+    }
+    @media (max-width: 900px) {
+      .demo-frame-body { aspect-ratio: 16 / 9; }
+    }
+    @media (max-width: 640px) {
+      .demo-url { display: none; }
+      .demo-frame { animation: none; }
+    }
+
     .stats-grid {
       display: grid;
       grid-template-columns: repeat(4, minmax(0, 1fr));
@@ -800,6 +1050,80 @@
   </header>
 
   <main id="home">
+    <section class="section" id="showcase" style="padding-top: 24px;">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <div class="eyebrow"><i class="fa-solid fa-images"></i> Our Work in Motion</div>
+            <h2>Building the future, one launch at a time</h2>
+            <p>A quick look at how we turn agentic AI, immersive tech, and modern engineering into products that ship.</p>
+          </div>
+        </div>
+
+        <div class="wm-slider" id="wmSlider">
+          <div class="wm-slider-track" id="wmSliderTrack">
+            <div class="wm-slide" style="background-image:url('assets/images/1.svg')">
+              <div class="wm-slide-overlay"></div>
+              <div class="wm-slide-content">
+                <span class="wm-slide-tag"><i class="fa-solid fa-robot"></i> Agentic AI</span>
+                <h3>Agentic AI solutions built for real business impact</h3>
+                <p>We design intelligent agents and copilots that automate work and accelerate decisions across your business.</p>
+                <a class="btn btn-primary" href="#services"><i class="fa-solid fa-arrow-right"></i> Explore Services</a>
+              </div>
+            </div>
+            <div class="wm-slide" style="background-image:url('assets/images/2.svg')">
+              <div class="wm-slide-overlay"></div>
+              <div class="wm-slide-content">
+                <span class="wm-slide-tag"><i class="fa-solid fa-users"></i> Our Team</span>
+                <h3>Collaborative teams delivering production-ready software</h3>
+                <p>Cross-functional engineers, designers, and strategists working together to ship dependable products fast.</p>
+                <a class="btn btn-primary" href="#careers"><i class="fa-solid fa-arrow-right"></i> Meet the Team</a>
+              </div>
+            </div>
+            <div class="wm-slide" style="background-image:url('assets/images/3.svg')">
+              <div class="wm-slide-overlay"></div>
+              <div class="wm-slide-content">
+                <span class="wm-slide-tag"><i class="fa-solid fa-cloud"></i> Cloud & Security</span>
+                <h3>Cloud, cybersecurity, and automation at scale</h3>
+                <p>Resilient cloud infrastructure and secure automation pipelines built to grow with your business.</p>
+                <a class="btn btn-primary" href="cloud-computing.html"><i class="fa-solid fa-arrow-right"></i> See Cloud Services</a>
+              </div>
+            </div>
+            <div class="wm-slide" style="background-image:url('assets/images/4.svg')">
+              <div class="wm-slide-overlay"></div>
+              <div class="wm-slide-content">
+                <span class="wm-slide-tag"><i class="fa-solid fa-rocket"></i> Product Launches</span>
+                <h3>From idea to launch — we build with you</h3>
+                <p>End-to-end delivery, from strategy and design to development, testing, and go-live support.</p>
+                <a class="btn btn-primary" href="software-development.html"><i class="fa-solid fa-arrow-right"></i> Our Process</a>
+              </div>
+            </div>
+            <div class="wm-slide" style="background-image:url('assets/images/arvr-team-1.svg')">
+              <div class="wm-slide-overlay"></div>
+              <div class="wm-slide-content">
+                <span class="wm-slide-tag"><i class="fa-solid fa-vr-cardboard"></i> AR / VR Engineering</span>
+                <h3>Immersive AR/VR innovation, engineered by real specialists</h3>
+                <p>Our AR/VR team builds immersive experiences that blend design, spatial computing, and AI.</p>
+                <a class="btn btn-primary" href="ai-ml.html"><i class="fa-solid fa-arrow-right"></i> Explore AI & ML</a>
+              </div>
+            </div>
+            <div class="wm-slide" style="background-image:url('assets/images/arvr-team-2.svg')">
+              <div class="wm-slide-overlay"></div>
+              <div class="wm-slide-content">
+                <span class="wm-slide-tag"><i class="fa-solid fa-wand-magic-sparkles"></i> Emerging Tech</span>
+                <h3>Next-gen experiences powered by emerging technology</h3>
+                <p>We stay ahead of the curve, blending GenAI, automation, and immersive tech into real products.</p>
+                <a class="btn btn-primary" href="gen-ai.html"><i class="fa-solid fa-arrow-right"></i> Discover GenAI</a>
+              </div>
+            </div>
+          </div>
+          <button class="wm-slider-arrow prev" id="wmPrev" type="button" aria-label="Previous slide"><i class="fa-solid fa-chevron-left"></i></button>
+          <button class="wm-slider-arrow next" id="wmNext" type="button" aria-label="Next slide"><i class="fa-solid fa-chevron-right"></i></button>
+          <div class="wm-slider-dots" id="wmDots"></div>
+        </div>
+      </div>
+    </section>
+
     <section class="hero">
       <div class="container hero-grid">
         <div>
@@ -858,6 +1182,59 @@
             <p>Live mentorship, portfolio projects, and job-focused training in GenAI, Agentic AI, and modern AI tools.</p>
           </div>
           <button class="btn btn-primary open-enroll-modal" type="button" data-service="GenAI Course"><i class="fa-solid fa-graduation-cap"></i> Enroll Now</button>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="product-demo">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <div class="eyebrow"><i class="fa-solid fa-play"></i> Live Product Walkthrough</div>
+            <h2>See wiTTyMinds Technologies in action</h2>
+            <p>A real look at how our platform helps teams launch agentic AI, automation, and modern software faster.</p>
+          </div>
+        </div>
+
+        <div class="demo-showcase">
+          <div class="demo-frame-wrap">
+            <div class="demo-frame">
+              <div class="demo-frame-bar">
+                <span class="demo-dot red"></span>
+                <span class="demo-dot yellow"></span>
+                <span class="demo-dot green"></span>
+                <span class="demo-url"><i class="fa-solid fa-lock"></i> wittymindstech.com</span>
+                <span class="demo-live"><span class="demo-live-pulse"></span> LIVE DEMO</span>
+              </div>
+              <div class="demo-frame-body" id="demoSlider">
+                <div class="demo-slider-track" id="demoSliderTrack">
+                  <div class="demo-slide">
+                    <video autoplay muted loop playsinline webkit-playsinline preload="auto" aria-label="WittyMinds Technologies product walkthrough demo 1">
+                      <source src="assets/images/wmtech1.mp4" type="video/mp4" />
+                    </video>
+                  </div>
+                  <div class="demo-slide">
+                    <video autoplay muted loop playsinline webkit-playsinline preload="auto" aria-label="WittyMinds Technologies product walkthrough demo 2">
+                      <source src="assets/images/wmtech2.mp4" type="video/mp4" />
+                    </video>
+                  </div>
+                  <div class="demo-slide">
+                    <video autoplay muted loop playsinline webkit-playsinline preload="auto" aria-label="WittyMinds Technologies product walkthrough demo 3">
+                      <source src="assets/images/wmtech3.mp4" type="video/mp4" />
+                    </video>
+                  </div>
+                  <div class="demo-slide">
+                    <video autoplay muted loop playsinline webkit-playsinline preload="auto" aria-label="WittyMinds Technologies product walkthrough demo 4">
+                      <source src="assets/images/wmtech4.mp4" type="video/mp4" />
+                    </video>
+                  </div>
+                </div>
+                <button class="wm-slider-arrow prev" id="demoPrev" type="button" aria-label="Previous demo"><i class="fa-solid fa-chevron-left"></i></button>
+                <button class="wm-slider-arrow next" id="demoNext" type="button" aria-label="Next demo"><i class="fa-solid fa-chevron-right"></i></button>
+                <div class="wm-slider-dots" id="demoDots"></div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </section>
@@ -1621,6 +1998,115 @@
 
       setTimeout(tickEnrollment, 3500);
     }
+
+    // Reusable slider (used for the home showcase and the gif demo carousel)
+    function initWmSlider({ sliderId, trackId, dotsId, prevId, nextId, interval }) {
+      const slider = document.getElementById(sliderId);
+      const track = document.getElementById(trackId);
+      const prevBtn = document.getElementById(prevId);
+      const nextBtn = document.getElementById(nextId);
+      const dotsWrap = document.getElementById(dotsId);
+      if (!slider || !track || !dotsWrap) return;
+
+      const slides = Array.from(track.children);
+      const slideVideos = slides.map(slide => slide.querySelector('video')).filter(Boolean);
+      let current = 0;
+      let autoplayTimer = null;
+
+      slideVideos.forEach(video => {
+        video.muted = true;
+        video.defaultMuted = true;
+        video.autoplay = true;
+        video.loop = true;
+        video.playsInline = true;
+        video.setAttribute('playsinline', '');
+        video.setAttribute('webkit-playsinline', '');
+      });
+
+      slides.forEach((_, index) => {
+        const dot = document.createElement('button');
+        dot.type = 'button';
+        dot.className = 'wm-dot' + (index === 0 ? ' active' : '');
+        dot.setAttribute('aria-label', `Go to slide ${index + 1}`);
+        dot.addEventListener('click', () => goToSlide(index));
+        dotsWrap.appendChild(dot);
+      });
+      const dots = Array.from(dotsWrap.children);
+
+      function goToSlide(index) {
+        current = (index + slides.length) % slides.length;
+        track.style.transform = `translateX(-${current * 100}%)`;
+        slides.forEach((slide, i) => slide.classList.toggle('active', i === current));
+        dots.forEach((dot, i) => dot.classList.toggle('active', i === current));
+
+        // Keep media playback in sync with the visible slide.
+        slides.forEach((slide, i) => {
+          const video = slide.querySelector('video');
+          if (!video) return;
+          if (i === current) {
+            const playPromise = video.play();
+            if (playPromise && typeof playPromise.catch === 'function') playPromise.catch(() => {});
+          } else {
+            video.pause();
+            video.currentTime = 0;
+          }
+        });
+      }
+
+      function ensureActiveVideoPlays() {
+        const activeSlide = slides[current];
+        if (!activeSlide) return;
+        const activeVideo = activeSlide.querySelector('video');
+        if (!activeVideo) return;
+        const playPromise = activeVideo.play();
+        if (playPromise && typeof playPromise.catch === 'function') playPromise.catch(() => {});
+      }
+
+      function nextSlide() { goToSlide(current + 1); }
+      function prevSlide() { goToSlide(current - 1); }
+
+      function startAutoplay() {
+        stopAutoplay();
+        autoplayTimer = setInterval(nextSlide, interval || 5000);
+      }
+      function stopAutoplay() {
+        if (autoplayTimer) clearInterval(autoplayTimer);
+      }
+
+      if (nextBtn) nextBtn.addEventListener('click', () => { nextSlide(); startAutoplay(); });
+      if (prevBtn) prevBtn.addEventListener('click', () => { prevSlide(); startAutoplay(); });
+
+      slider.addEventListener('mouseenter', stopAutoplay);
+      slider.addEventListener('mouseleave', startAutoplay);
+
+      slideVideos.forEach(video => {
+        video.addEventListener('loadeddata', ensureActiveVideoPlays);
+        video.addEventListener('canplay', ensureActiveVideoPlays);
+      });
+
+      document.addEventListener('visibilitychange', () => {
+        if (!document.hidden) ensureActiveVideoPlays();
+      });
+
+      let touchStartX = 0;
+      slider.addEventListener('touchstart', (e) => {
+        touchStartX = e.changedTouches[0].clientX;
+      }, { passive: true });
+      slider.addEventListener('touchend', (e) => {
+        const delta = e.changedTouches[0].clientX - touchStartX;
+        if (Math.abs(delta) > 40) {
+          delta < 0 ? nextSlide() : prevSlide();
+          startAutoplay();
+        }
+      }, { passive: true });
+
+      goToSlide(0);
+      ensureActiveVideoPlays();
+      startAutoplay();
+    }
+
+    initWmSlider({ sliderId: 'wmSlider', trackId: 'wmSliderTrack', dotsId: 'wmDots', prevId: 'wmPrev', nextId: 'wmNext', interval: 5000 });
+    initWmSlider({ sliderId: 'demoSlider', trackId: 'demoSliderTrack', dotsId: 'demoDots', prevId: 'demoPrev', nextId: 'demoNext', interval: 4500 });
   </script>
 </body>
 </html>
