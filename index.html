@@ -603,6 +603,47 @@
     .service-card h3 { margin: 0 0 8px; font-size: 1.1rem; }
     .service-card p { margin: 0 0 14px; color: var(--muted); font-size: 0.95rem; }
     .service-card .link { color: #8bb8ff; font-weight: 700; }
+    .service-card .offer-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      margin-top: 8px;
+      padding: 10px 14px;
+      border-radius: 10px;
+      font-size: 0.9rem;
+      font-weight: 800;
+      color: #fff;
+      text-decoration: none;
+      background: linear-gradient(90deg, #ff6b35, #f97316);
+      box-shadow: 0 10px 20px rgba(249, 115, 22, 0.26);
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
+    }
+    .service-card .offer-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 14px 24px rgba(249, 115, 22, 0.34);
+    }
+    .service-card .offer-note {
+      margin-top: 12px;
+      font-size: 0.9rem;
+      line-height: 1.45;
+      font-weight: 800;
+      color: #ffffff;
+    }
+    .it-outsourcing-card {
+      display: grid;
+      gap: 24px;
+      grid-template-columns: 1.2fr 0.8fr;
+      align-items: center;
+    }
+    .it-outsourcing-image {
+      width: 100%;
+      border-radius: 18px;
+      border: 1px solid rgba(255,255,255,0.12);
+      object-fit: cover;
+      object-position: center;
+      min-height: 280px;
+    }
 
     .steps { display: grid; grid-template-columns: repeat(3, minmax(0,1fr)); gap: 18px; }
     .step { padding: 22px; background: linear-gradient(165deg, rgba(17,36,82,0.7), rgba(8,21,55,0.82)); border: 1px solid var(--border); border-radius: 14px; }
@@ -1030,6 +1071,13 @@
       .video-grid { grid-template-columns: 1fr; }
       .program-actions { flex-direction: column; align-items: stretch; }
       .enrollment-badge { justify-content: center; text-align: center; }
+      .book-popup h4 { font-size: 0.88rem; }
+      .it-outsourcing-card { grid-template-columns: 1fr; }
+      .it-outsourcing-image {
+        min-height: 200px;
+        max-height: 230px;
+        object-position: center top;
+      }
     }
   </style>
 </head>
@@ -1041,6 +1089,7 @@
       <nav class="nav-links" id="nav-links">
         <a href="#home" class="active">Home</a>
         <a href="#genai-course-highlight">GenAI Courses</a>
+        <a href="tech-consultation.html">1:1 Tech Consultation</a>
         <a href="#careers">Careers</a>
         <a href="#services">Services</a>
         <a href="#partners">Partners</a>
@@ -1105,7 +1154,7 @@
 
     <section class="section" id="it-outsourcing-hub">
       <div class="container">
-        <div class="hero-card" style="padding: 28px; background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.12); display: grid; gap: 24px; grid-template-columns: 1.2fr 0.8fr; align-items: center;">
+        <div class="hero-card it-outsourcing-card" style="padding: 28px; background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.12);">
           <div>
             <div class="eyebrow"><i class="fa-solid fa-server"></i> IT Outsourcing Hub</div>
             <h2>Building Scalable, Reliable and Robust Softwares on Latest Technologies</h2>
@@ -1121,7 +1170,7 @@
               </div>
             </div>
           </div>
-          <img src="assets/images/wmtech-resources.jpg" alt="IT Outsourcing Hub resources" style="width: 100%; border-radius: 18px; border: 1px solid rgba(255,255,255,0.12); object-fit: cover; min-height: 280px;">
+          <img class="it-outsourcing-image" src="assets/images/wmtech-resources.jpg" alt="IT Outsourcing Hub resources">
         </div>
       </div>
     </section>
@@ -1403,6 +1452,14 @@
         </div>
 
         <div class="card-grid">
+          <div class="service-card zoom-card">
+            <div class="card-media"><img src="assets/images/tech-consultation.png" alt="Book 1:1 technical consultation" /></div>
+            <h3>Book 1:1 Technical Consultation</h3>
+            <p>Kickstart your business and take it to next level with practical GenAI and technology strategies built for your exact goals.</p>
+            <a class="link" href="tech-consultation.html">Learn more -></a>
+            <a class="offer-btn" href="https://rzp.io/rzp/URbbDVum" target="_blank" rel="noopener noreferrer"><i class="fa-solid fa-credit-card"></i> Book 1:1 Tech Consultation INR 499/- Only</a>
+            <div class="offer-note"><strong>Exclusive for startup founders, small and medium business owners, e-commerce brands, IT teams and entrepreneurs, and professionals planning AI-powered products.</strong></div>
+          </div>
           <a class="service-card zoom-card" href="genai-course.html">
             <div class="card-media"><img src="assets/images/genaicourse.jpg?v=2" alt="GenAI career course" /></div>
             <h3>GenAI Career Course</h3>
