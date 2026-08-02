@@ -941,38 +941,155 @@
       position: fixed;
       right: 22px;
       bottom: 92px;
-      width: min(320px, calc(100% - 28px));
-      padding: 18px 18px 16px;
-      border-radius: 18px;
-      background: linear-gradient(135deg, rgba(10,24,46,0.98), rgba(23,42,74,0.96));
-      border: 1px solid rgba(255,255,255,0.14);
-      box-shadow: 0 18px 40px rgba(0,0,0,0.35);
+      width: 56px;
+      min-height: 56px;
+      padding: 0;
+      border-radius: 999px;
+      background: linear-gradient(135deg, #25d366, #128c7e);
+      border: 1px solid rgba(255,255,255,0.16);
+      box-shadow: 0 12px 26px rgba(0,0,0,0.28);
       z-index: 1100;
-      animation: popupIn 0.45s ease-out;
+      overflow: hidden;
+      transition: width 0.25s ease, height 0.25s ease, border-radius 0.25s ease, padding 0.25s ease;
+    }
+    .book-popup.open {
+      width: min(320px, calc(100% - 28px));
+      min-height: 360px;
+      border-radius: 18px;
+      padding: 12px;
+      background: linear-gradient(135deg, rgba(10,24,46,0.98), rgba(23,42,74,0.96));
+    }
+    .book-popup .book-trigger {
+      width: 56px;
+      height: 56px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border: 0;
+      background: transparent;
+      color: white;
+      cursor: pointer;
+      padding: 0;
+      font-size: 1.35rem;
+    }
+    .book-popup .book-popup-content {
+      display: none;
+    }
+    .book-popup.open .book-popup-content {
+      display: block;
+    }
+    .book-popup .chat-shell {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    .book-popup .chat-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 0.8rem;
+      color: #dce9ff;
+      padding-right: 24px;
+    }
+    .book-popup .chat-header span {
+      color: #7df0c4;
+      font-size: 0.72rem;
+    }
+    .book-popup .chat-messages {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      max-height: 220px;
+      overflow-y: auto;
+      padding-right: 4px;
+    }
+    .book-popup .chat-bubble {
+      max-width: 100%;
+      padding: 8px 10px;
+      border-radius: 12px;
+      font-size: 0.78rem;
+      line-height: 1.4;
+      word-break: break-word;
+    }
+    .book-popup .chat-bubble.bot {
+      background: rgba(255,255,255,0.08);
+      color: #f4f7ff;
+    }
+    .book-popup .chat-bubble.user {
+      background: linear-gradient(90deg, #ff6b35, #f97316);
+      color: white;
+      margin-left: auto;
+    }
+    .book-popup .chat-bubble a {
+      display: inline-block;
+      margin-top: 6px;
+      color: #90d5ff;
+      font-weight: 700;
+      text-decoration: underline;
+    }
+    .book-popup .chat-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+    }
+    .book-popup .chat-chip {
+      border: 1px solid rgba(255,255,255,0.14);
+      background: rgba(255,255,255,0.06);
+      color: #f4f7ff;
+      border-radius: 999px;
+      padding: 6px 8px;
+      font-size: 0.72rem;
+      cursor: pointer;
+    }
+    .book-popup .chat-form {
+      display: flex;
+      gap: 6px;
+      margin-top: 2px;
+    }
+    .book-popup .chat-form input {
+      flex: 1;
+      border: 1px solid rgba(255,255,255,0.14);
+      background: rgba(255,255,255,0.06);
+      color: white;
+      border-radius: 999px;
+      padding: 8px 10px;
+      font-size: 0.75rem;
+      outline: none;
+    }
+    .book-popup .chat-form button {
+      border: 0;
+      background: linear-gradient(90deg, #ff6b35, #f97316);
+      color: white;
+      border-radius: 999px;
+      width: 36px;
+      height: 36px;
+      cursor: pointer;
     }
     .book-popup h4 {
-      margin: 0 0 8px;
-      font-size: 1rem;
+      margin: 0 0 6px;
+      font-size: 0.82rem;
       color: white;
     }
     .book-popup p {
-      margin: 0 0 12px;
+      margin: 0 0 8px;
       color: var(--muted);
-      font-size: 0.95rem;
+      font-size: 0.78rem;
+      line-height: 1.35;
     }
     .book-popup .actions { display: flex; gap: 10px; flex-wrap: wrap; }
-    .book-popup .btn { padding: 10px 14px; font-size: 0.92rem; }
+    .book-popup .btn { padding: 8px 10px; font-size: 0.78rem; }
     .book-popup .close-btn {
       position: absolute;
-      top: 10px;
-      right: 10px;
+      top: 8px;
+      right: 8px;
       border: 0;
       background: rgba(255,255,255,0.08);
       color: white;
-      width: 28px;
-      height: 28px;
+      width: 22px;
+      height: 22px;
       border-radius: 50%;
       cursor: pointer;
+      font-size: 0.8rem;
     }
     @keyframes bob {
       0%, 100% { transform: translateY(0); }
@@ -1071,7 +1188,15 @@
       .video-grid { grid-template-columns: 1fr; }
       .program-actions { flex-direction: column; align-items: stretch; }
       .enrollment-badge { justify-content: center; text-align: center; }
-      .book-popup h4 { font-size: 0.88rem; }
+      .book-popup {
+        width: min(220px, calc(100% - 24px));
+        right: 12px;
+        bottom: 84px;
+        padding: 10px 10px 8px;
+      }
+      .book-popup h4 { font-size: 0.76rem; }
+      .book-popup p { font-size: 0.72rem; margin-bottom: 6px; }
+      .book-popup .btn { font-size: 0.72rem; padding: 7px 9px; }
       .it-outsourcing-card { grid-template-columns: 1fr; }
       .it-outsourcing-image {
         min-height: 200px;
@@ -1457,7 +1582,6 @@
             <h3>Book 1:1 Technical Consultation</h3>
             <p>Kickstart your business and take it to next level with practical GenAI and technology strategies built for your exact goals.</p>
             <a class="link" href="one-to-one-tech-consultation.html">Learn more -></a>
-            <a class="offer-btn" href="https://rzp.io/rzp/URbbDVum" target="_blank" rel="noopener noreferrer"><i class="fa-solid fa-credit-card"></i> Book 1:1 Tech Consultation INR 499/- Only</a>
             <div class="offer-note"><strong>Exclusive for startup founders, small and medium business owners, e-commerce brands, IT teams and entrepreneurs, and professionals planning AI-powered products.</strong></div>
           </div>
           <a class="service-card zoom-card" href="genai-course.html">
@@ -1779,13 +1903,31 @@
     </div>
   </footer>
 
-  <div class="book-popup" id="bookPopup" role="dialog" aria-label="Book a service popup">
-    <button class="close-btn" id="closePopup" aria-label="Close popup">×</button>
-    <h4>Book a Service with Us</h4>
-    <p>Need a custom AI solution, app, cloud setup, or digital growth plan? Let’s start with a quick consultation.</p>
-    <div class="actions">
-      <button class="btn btn-primary open-enroll-modal" type="button" data-service="Service Consultation"><i class="fa-solid fa-paper-plane"></i> Book Now</button>
-      <a class="btn btn-secondary" href="https://wa.me/918971599350" target="_blank"><i class="fa-brands fa-whatsapp"></i> WhatsApp</a>
+  <div class="book-popup" id="bookPopup" role="dialog" aria-label="Book a service popup" aria-expanded="false">
+    <button class="book-trigger" id="bookPopupTrigger" type="button" aria-label="Open booking options">
+      <i class="fa-solid fa-robot"></i>
+    </button>
+    <div class="book-popup-content">
+      <button class="close-btn" id="closePopup" aria-label="Close popup">×</button>
+      <div class="chat-shell">
+        <div class="chat-header">
+          <strong>WittyMinds Assistant</strong>
+          <span>Online</span>
+        </div>
+        <div class="chat-messages" id="chatMessages">
+          <div class="chat-bubble bot">Hi! I can help you choose the right next step. Ask me about consultations, subscriptions, remote work, or services.</div>
+        </div>
+        <div class="chat-actions">
+          <button class="chat-chip" type="button" data-action="consultation">Book consultation</button>
+          <button class="chat-chip" type="button" data-action="subscription">Take subscription</button>
+          <button class="chat-chip" type="button" data-action="remote">Remote job subscription</button>
+          <button class="chat-chip" type="button" data-action="services">Explore services</button>
+        </div>
+        <form class="chat-form" id="assistantForm">
+          <input id="assistantInput" type="text" placeholder="Type your question..." />
+          <button type="submit" aria-label="Send message"><i class="fa-solid fa-paper-plane"></i></button>
+        </form>
+      </div>
     </div>
   </div>
 
@@ -1843,6 +1985,137 @@
     });
 
     document.getElementById('year').textContent = new Date().getFullYear();
+
+    const bookPopup = document.getElementById('bookPopup');
+    const bookPopupTrigger = document.getElementById('bookPopupTrigger');
+    const closePopupBtn = document.getElementById('closePopup');
+    const chatForm = document.getElementById('assistantForm');
+    const assistantInput = document.getElementById('assistantInput');
+    const chatMessages = document.getElementById('chatMessages');
+    const chatChips = document.querySelectorAll('.chat-chip');
+
+    function closeBookPopup() {
+      if (bookPopup) {
+        bookPopup.classList.remove('open');
+        bookPopup.setAttribute('aria-expanded', 'false');
+      }
+    }
+
+    function openBookPopup() {
+      if (bookPopup) {
+        bookPopup.classList.add('open');
+        bookPopup.setAttribute('aria-expanded', 'true');
+      }
+    }
+
+    function addChatMessage(text, sender = 'bot') {
+      if (!chatMessages) return;
+      const bubble = document.createElement('div');
+      bubble.className = `chat-bubble ${sender}`;
+      bubble.innerHTML = text;
+      chatMessages.appendChild(bubble);
+      chatMessages.scrollTop = chatMessages.scrollHeight;
+    }
+
+    function getAssistantReply(userText) {
+      const text = userText.toLowerCase();
+
+      if (/(consult|meeting|call|tech)/.test(text)) {
+        return {
+          text: 'You can book a 1:1 consultation here:',
+          links: [{ href: 'one-to-one-tech-consultation.html', text: 'Book 1:1 Tech Consultation' }]
+        };
+      }
+
+      if (/(subscript|pay|price|499|999|lifetime)/.test(text)) {
+        return {
+          text: 'You can take a subscription here:',
+          links: [{ href: '#pricing', text: 'See Subscription Options' }]
+        };
+      }
+
+      if (/(remote|job|work from home|work-from-home)/.test(text)) {
+        return {
+          text: 'Explore the remote work program here:',
+          links: [{ href: 'remote-work.html', text: 'Remote Work Exclusive Program' }]
+        };
+      }
+
+      if (/(service|service(s)?|explore|help|build)/.test(text)) {
+        return {
+          text: 'You can browse our services here:',
+          links: [{ href: '#services', text: 'Explore Services' }]
+        };
+      }
+
+      return {
+        text: 'I can help you with consultation, subscriptions, remote work, or services. Choose one of the options below:',
+        links: [
+          { href: 'one-to-one-tech-consultation.html', text: 'Book 1:1 Tech Consultation' },
+          { href: '#pricing', text: 'Take Subscription' },
+          { href: 'remote-work.html', text: 'Remote Work Subscription' },
+          { href: '#services', text: 'Explore Services' }
+        ]
+      };
+    }
+
+    function renderAssistantReply(reply) {
+      const linksMarkup = (reply.links || []).map(link => `<a href="${link.href}">${link.text}</a>`).join('');
+      addChatMessage(`<div>${reply.text}</div>${linksMarkup}`, 'bot');
+    }
+
+    function handleQuickAction(action) {
+      if (action === 'consultation') {
+        renderAssistantReply({ text: 'Here is the consultation page:', links: [{ href: 'one-to-one-tech-consultation.html', text: 'Book 1:1 Tech Consultation' }] });
+      } else if (action === 'subscription') {
+        renderAssistantReply({ text: 'Here are the subscription options:', links: [{ href: '#pricing', text: 'Take Subscription' }] });
+      } else if (action === 'remote') {
+        renderAssistantReply({ text: 'Here is the remote work subscription page:', links: [{ href: 'remote-work.html', text: 'Remote Work Exclusive Program' }] });
+      } else if (action === 'services') {
+        renderAssistantReply({ text: 'Explore our services here:', links: [{ href: '#services', text: 'Explore Services' }] });
+      }
+    }
+
+    if (bookPopupTrigger) {
+      bookPopupTrigger.addEventListener('click', () => {
+        if (bookPopup?.classList.contains('open')) {
+          closeBookPopup();
+        } else {
+          openBookPopup();
+        }
+      });
+    }
+
+    if (closePopupBtn) {
+      closePopupBtn.addEventListener('click', closeBookPopup);
+    }
+
+    chatChips.forEach(button => {
+      button.addEventListener('click', () => {
+        const action = button.getAttribute('data-action');
+        addChatMessage(`<div>You selected: ${button.textContent}</div>`, 'user');
+        handleQuickAction(action);
+      });
+    });
+
+    if (chatForm && assistantInput) {
+      chatForm.addEventListener('submit', (event) => {
+        event.preventDefault();
+        const value = assistantInput.value.trim();
+        if (!value) return;
+        addChatMessage(`<div>${value}</div>`, 'user');
+        assistantInput.value = '';
+        const reply = getAssistantReply(value);
+        renderAssistantReply(reply);
+      });
+    }
+
+    document.addEventListener('click', (event) => {
+      if (!bookPopup?.classList.contains('open')) return;
+      if (!bookPopup.contains(event.target)) {
+        closeBookPopup();
+      }
+    });
 
     const modal = document.getElementById('enrollModal');
     const closeModalBtn = document.getElementById('closeEnrollModal');
