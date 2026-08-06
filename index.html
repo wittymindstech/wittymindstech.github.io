@@ -860,12 +860,47 @@
       -webkit-text-fill-color: transparent;
       background-clip: text;
     }
+    .pricing-card.school {
+      background: linear-gradient(160deg, rgba(16,178,245,0.20), rgba(255,255,255,0.06));
+      border: 1px solid rgba(59,130,246,0.38);
+      box-shadow: 0 22px 50px rgba(59,130,246,0.16);
+    }
+    .pricing-card.school .badge {
+      background: rgba(56,189,248,0.2);
+      color: #bfeaff;
+    }
+    .pricing-thumb {
+      width: 100%;
+      max-width: 280px;
+      height: 150px;
+      margin: 0 auto 16px;
+      border-radius: 14px;
+      object-fit: cover;
+      border: 1px solid rgba(138,168,255,0.28);
+    }
+    .curriculum-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      margin-top: 12px;
+      color: #d7ecff;
+      font-weight: 700;
+      text-decoration: underline;
+      text-underline-offset: 3px;
+    }
+    .curriculum-link:hover { color: #ffffff; }
     .btn-pay-alt {
       background: linear-gradient(90deg, #f97316, #a855f7);
       color: #fff;
       box-shadow: 0 12px 30px rgba(249,115,22,0.32);
     }
     .btn-pay-alt:hover { box-shadow: 0 16px 36px rgba(249,115,22,0.42); }
+    .btn-pay-school {
+      background: linear-gradient(90deg, #0ea5e9, #2563eb);
+      color: #fff;
+      box-shadow: 0 12px 30px rgba(37,99,235,0.34);
+    }
+    .btn-pay-school:hover { box-shadow: 0 16px 36px rgba(37,99,235,0.44); }
     .pricing-card .price {
       font-size: clamp(2.4rem, 4vw, 3rem);
       font-weight: 800;
@@ -1545,7 +1580,7 @@
         <div class="section-head" style="justify-content: center; text-align: center; flex-direction: column; align-items: center;">
           <div class="eyebrow"><i class="fa-solid fa-tags"></i> Lifetime access</div>
           <h2>One payment. Full career support.</h2>
-          <p>Unlock JobSeekers and Recruiter Connect Program resources with a single lifetime subscription.</p>
+          <p>Choose your lifetime subscription and unlock focused career programs by wiTTyMindsTech.</p>
         </div>
         <div class="pricing-wrap">
           <div class="pricing-card">
@@ -1561,6 +1596,16 @@
             <div class="price">₹999/- Only</div>
             <p class="price-note">One-time payment • Lifetime access to remote job placement resources & updates</p>
             <a class="btn btn-pay-alt" href="https://rzp.io/rzp/rJ7oDqCC" target="_blank" rel="noopener noreferrer"><i class="fa-solid fa-credit-card"></i> Pay Now — ₹999</a>
+          </div>
+          <div class="pricing-card school">
+            <div class="badge"><i class="fa-solid fa-brain"></i> New AI Program</div>
+            <img class="pricing-thumb" src="assets/images/wittyminds-school-of-ai.png" alt="School of AI and GenAI by wiTTyMindsTech" />
+            <h3>School of AI &amp; GenAI by wiTTyMindsTech</h3>
+            <div class="price">₹9999/- Lifetime</div>
+            <p class="price-note">Click to view payment on the dedicated page. Download the curriculum directly from home page.</p>
+            <a class="btn btn-pay-school" href="school-of-ai-genai.html"><i class="fa-solid fa-arrow-right"></i> View Payment Page</a>
+            <br />
+            <a class="curriculum-link" href="assets/images/docs/wiTTyMindsTech-School-of-AI-GenAI-Program_779ca5bd.pdf" download><i class="fa-solid fa-file-arrow-down"></i> Download Curriculum (PDF)</a>
           </div>
         </div>
       </div>
@@ -1880,6 +1925,7 @@
         <a href="web-development.html">Web Development</a><br />
         <a href="ai-ml.html">AI / ML</a><br />
         <a href="genai-course.html">GenAI Career Course</a><br />
+        <a href="school-of-ai-genai.html">School of AI &amp; GenAI</a><br />
         <a href="#careers">Internships & Job Connect</a><br />
         <a href="remote-work.html">Remote Work Exclusive Program</a><br />
         <a href="#partners">Our Partners</a><br />
@@ -1944,6 +1990,7 @@
           <option value="GenAI Course">GenAI Course</option>
           <option value="JobSeekers and Recruiter Connect Program">JobSeekers and Recruiter Connect Program</option>
           <option value="Remote Work Exclusive Program">Remote Work Exclusive Program</option>
+          <option value="School of AI &amp; GenAI by wiTTyMindsTech">School of AI &amp; GenAI by wiTTyMindsTech</option>
           <option value="WittyMinds Tech Internships">WittyMinds Tech Internships</option>
           <option value="Agentic AI Software">Agentic AI Software</option>
           <option value="Automate Your Business using GenAI">Automate Your Business using GenAI</option>
@@ -2027,10 +2074,13 @@
         };
       }
 
-      if (/(subscript|pay|price|499|999|lifetime)/.test(text)) {
+      if (/(subscript|pay|price|499|999|9999|lifetime|school of ai|genai school)/.test(text)) {
         return {
           text: 'You can take a subscription here:',
-          links: [{ href: '#pricing', text: 'See Subscription Options' }]
+          links: [
+            { href: '#pricing', text: 'See Subscription Options' },
+            { href: 'school-of-ai-genai.html', text: 'School of AI & GenAI Payment Page' }
+          ]
         };
       }
 
