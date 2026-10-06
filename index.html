@@ -257,6 +257,39 @@
       text-shadow: 0 0 26px rgba(93, 154, 255, 0.2);
     }
     .hero p { font-size: 1.05rem; color: var(--muted); max-width: 650px; margin: 0 0 26px; }
+    .trending-product-spotlight {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      width: fit-content;
+      max-width: 100%;
+      margin: 0 0 18px;
+      padding: 10px 15px;
+      border: 1px solid rgba(255,190,92,0.55);
+      border-radius: 12px;
+      background: linear-gradient(100deg, rgba(255,175,64,0.15), rgba(34,211,238,0.1));
+      color: #fff;
+      transition: transform 0.25s ease, border-color 0.25s ease;
+    }
+    .trending-product-spotlight:hover {
+      transform: translateY(-2px);
+      border-color: rgba(255,190,92,0.9);
+    }
+    .trending-product-spotlight img {
+      width: 42px;
+      height: 42px;
+      object-fit: contain;
+      flex: 0 0 auto;
+    }
+    .trending-product-copy { display: grid; gap: 2px; }
+    .trending-product-label {
+      color: #ffd084;
+      font-size: 0.7rem;
+      font-weight: 800;
+      text-transform: uppercase;
+    }
+    .trending-product-copy strong { font-size: 0.98rem; }
+    .trending-product-arrow { color: #ffd084; margin-left: 4px; }
     .hero-actions { display: flex; flex-wrap: wrap; gap: 12px; margin-bottom: 24px; }
     .hero-highlights {
       display: grid;
@@ -1465,6 +1498,13 @@
       <div class="container hero-grid">
         <div>
           <div class="eyebrow"><i class="fa-solid fa-bolt"></i> AI • Software • Cloud • Growth</div>
+          <a class="trending-product-spotlight" href="https://globalaimentor.com" target="_blank" rel="noopener noreferrer" aria-label="Trending product: visit Global AI Mentor">
+            <img src="assets/images/globalaimentor.png" alt="" />
+            <span class="trending-product-copy">
+              <span class="trending-product-label"><i class="fa-solid fa-arrow-trend-up"></i> Trending product</span>
+              <strong>Global AI Mentor <i class="fa-solid fa-arrow-up-right-from-square trending-product-arrow" aria-hidden="true"></i></strong>
+            </span>
+          </a>
           <h1>Agentic AI Production-Ready Software for the next wave of growth.</h1>
           <p>We design and deploy intelligent agents, AI copilots, and production-ready software that automates work, accelerates decisions, and turns ideas into revenue faster.</p>
           <div class="hero-actions">
@@ -1807,9 +1847,9 @@
                 <source src="assets/images/videos/ai-hr-mentor-oQ_I-ph-.mp4" type="video/mp4" />
               </video>
             </div>
-            <div class="badge"><i class="fa-solid fa-rocket"></i> Featured</div>
-            <h3>Agentic AI Production-Ready Software</h3>
-            <p>Meet Global AI Mentor: an AI-powered HR assistant for the next wave of growth.</p>
+            <div class="badge"><i class="fa-solid fa-arrow-trend-up"></i> Trending product</div>
+            <h3>Global AI Mentor</h3>
+            <p>Agentic AI software built to help modern teams work smarter and grow faster.</p>
             <span class="link">Visit globalaimentor.com →</span>
           </a>
           <a class="service-card zoom-card" href="app-development.html">
