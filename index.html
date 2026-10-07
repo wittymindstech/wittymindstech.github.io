@@ -600,6 +600,14 @@
       border: 1px solid var(--border);
       text-align: center;
     }
+    .impact-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 16px;
+      margin-top: 16px;
+    }
+    .impact-card { display: flex; align-items: center; gap: 16px; text-align: left; }
+    .impact-card img { width: 120px; height: 90px; object-fit: cover; border-radius: 12px; flex-shrink: 0; }
     .stat-card strong { font-size: 1.5rem; color: #fff; display: block; }
     .stat-card span { color: var(--muted); font-size: 0.95rem; }
 
@@ -1301,6 +1309,7 @@
       .nav-links.open { display: flex; }
       .card-grid { grid-template-columns: 1fr; }
       .stats-grid { grid-template-columns: 1fr; }
+      .impact-grid { grid-template-columns: 1fr; }
       .hero-highlights { grid-template-columns: 1fr; }
       .section-head { flex-direction: column; align-items: start; }
       .bottom-bar { flex-direction: column; }
@@ -1550,6 +1559,23 @@
         <div class="stat-card">
           <strong data-count="24">0</strong>
           <span>Hours Response Time</span>
+        </div>
+      </div>
+
+      <div class="container impact-grid">
+        <div class="stat-card impact-card">
+          <img src="assets/images/consultation.jpg" alt="1:1 mentorship and consultation" loading="lazy" />
+          <div>
+            <strong>₹ Millions Saved</strong>
+            <span>in Admission Fees for Indian Parents through our Youth Mentorship & Consultation Program</span>
+          </div>
+        </div>
+        <div class="stat-card impact-card">
+          <img src="assets/images/consultation.jpg" alt="Career consultation" loading="lazy" />
+          <div>
+            <strong><span data-count="5000" style="color:#fff;font-size:inherit;">0</span>+ Candidates</strong>
+            <span>Pursue their Dream Job & Career via Our Consultation</span>
+          </div>
         </div>
       </div>
 
@@ -1803,25 +1829,25 @@
             <span class="link">Learn more →</span>
           </a>
           <a class="service-card zoom-card" href="genai-course.html">
-            <div class="card-media"><img src="assets/images/genaicourse.jpg?v=2" alt="GenAI career course" /></div>
+            <div class="card-media" style="height: 230px;"><img src="assets/images/genaicourse.jpg?v=2" alt="GenAI career course" style="object-fit: contain; background: rgba(255,255,255,0.04);" /></div>
             <h3>GenAI Career Course</h3>
             <p>Top instructor-based GenAI & AI courses for your dream job — live mentoring and industry-aligned projects.</p>
             <span class="link">Learn more →</span>
           </a>
           <a class="service-card zoom-card" href="genai-films.html">
-            <div class="card-media"><img src="assets/images/ai_films.jpg?v=2" alt="GenAI-based short films" /></div>
+            <div class="card-media" style="height: 230px;"><img src="assets/images/ai_films.jpg?v=2" alt="GenAI-based short films" style="object-fit: contain; background: rgba(255,255,255,0.04);" /></div>
             <h3>GenAI Based Short Films</h3>
             <p>AI-powered film production with fast scripting, visuals, and storytelling for brand content.</p>
             <span class="link">Learn more →</span>
           </a>
           <a class="service-card zoom-card" href="genai-ads.html">
-            <div class="card-media"><img src="assets/images/aiads.jpg?v=2" alt="GenAI-based advertisements" /></div>
+            <div class="card-media" style="height: 230px;"><img src="assets/images/aiads.jpg?v=2" alt="GenAI-based advertisements" style="object-fit: contain; background: rgba(255,255,255,0.04);" /></div>
             <h3>GenAI Based Advertisements</h3>
             <p>Smart ad creative generation for social, video, and digital campaigns — built for speed.</p>
             <span class="link">Learn more →</span>
           </a>
           <a class="service-card zoom-card" href="automation.html">
-            <div class="card-media"><img src="assets/images/business-automate.jpg" alt="Automate your business using GenAI" style="object-position: center 30%;" /></div>
+            <div class="card-media" style="height: 230px;"><img src="assets/images/business-automate.png" alt="Automate your business using GenAI" style="object-fit: contain; background: rgba(255,255,255,0.04);" /></div>
             <h3>Automate Your Business using GenAI</h3>
             <p>Leverage the power of AI agents to automate workflows, reduce manual effort, and scale operations.</p>
             <span class="link">Learn more →</span>
@@ -1865,7 +1891,7 @@
             <span class="link">Learn more →</span>
           </a>
           <a class="service-card zoom-card" href="genai-course.html">
-            <div class="card-media"><img src="assets/images/genaicourse.jpg" alt="GenAI course" /></div>
+            <div class="card-media" style="height: 230px;"><img src="assets/images/genaicourse.jpg" alt="GenAI course" style="object-fit: contain; background: rgba(255,255,255,0.04);" /></div>
             <h3>GenAI Career Course</h3>
             <p>Job-oriented training for next-gen AI roles with one-on-one mentorship and real industry projects.</p>
             <span class="link">Learn more →</span>
@@ -1877,19 +1903,19 @@
             <span class="link">Learn more →</span>
           </a>
           <a class="service-card zoom-card" href="genai-films.html">
-            <div class="card-media"><img src="assets/images/ai_films.jpg" alt="GenAI-Based short films" /></div>
+            <div class="card-media" style="height: 230px;"><img src="assets/images/ai_films.jpg" alt="GenAI-Based short films" style="object-fit: contain; background: rgba(255,255,255,0.04);" /></div>
             <h3>GenAI Based Short Films</h3>
             <p>High-impact cinematic storytelling with AI-generated visuals, scripts, and smart editing.</p>
             <span class="link">Explore now →</span>
           </a>
           <a class="service-card zoom-card" href="genai-ads.html">
-            <div class="card-media"><img src="assets/images/aiads.jpg" alt="GenAI-Based advertisements" /></div>
+            <div class="card-media" style="height: 230px;"><img src="assets/images/aiads.jpg" alt="GenAI-Based advertisements" style="object-fit: contain; background: rgba(255,255,255,0.04);" /></div>
             <h3>GenAI Based Advertisements</h3>
             <p>Creative ad campaigns produced quickly with generative AI for social, video, and display media.</p>
             <span class="link">Explore now →</span>
           </a>
           <a class="service-card zoom-card" href="automation.html">
-            <div class="card-media"><img src="assets/images/business-automate.jpg" alt="Automate your business using GenAI" style="object-position: center 30%;" /></div>
+            <div class="card-media" style="height: 230px;"><img src="assets/images/business-automate.png" alt="Automate your business using GenAI" style="object-fit: contain; background: rgba(255,255,255,0.04);" /></div>
             <h3>Automate Your Business using GenAI</h3>
             <p>Leverage the power of AI agents to automate workflows, reduce manual effort, and scale operations.</p>
             <span class="link">Explore now →</span>
